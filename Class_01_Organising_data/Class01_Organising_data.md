@@ -209,9 +209,9 @@ Very often some information in you data is missing, for instance you have not re
 
 > #### Data organisation dos and don'ts
 > 
-> - objects/observations/cases are in rows
+> - objects/observations/**cases** are **in rows**
 > 
-> - variables/characteristics//properties are in columns
+> - **variables**/characteristics//properties are **in columns**
 > 
 > - each case should have its unique ID
 > 
