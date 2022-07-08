@@ -1,3 +1,9 @@
 bad_data/
 
 Data_examples.xlsx
+
+.Rproj.user
+*.Rproj
+.DS_Store
+.Rhistory
+.Rdata
