@@ -7,4 +7,7 @@ Practical Computing for MSc students at the Faculty of Biology, Jagiellonian Uni
 * [Class_3: **Introduction to Linux command line, connecting to a remote Linux machine, moving around in the Linux system**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_03_Linux_Intro/Class3.md)
 * [Class_4: **Working in Linux shell I**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_04_Linux_shell_I/Class_4.md)
 * [Class_5: **Working in Linux shell II**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_05_Linux_shell_II/Class_5.md) 
+* [Class_6: **Automation with shell scripts**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_06_Shell_scripts/Class_6.md) 
+* [Class_7: **R and RStudio**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_07_R_RStudio/Class_7.md) 
+* [Class_8: **Data in R**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_08_Data_in_R/Class_8.md) 
 
