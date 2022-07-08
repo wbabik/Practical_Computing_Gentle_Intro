@@ -7,3 +7,6 @@ Data_examples.xlsx
 .DS_Store
 .Rhistory
 .Rdata
+*.html
+
+CO2.csv
