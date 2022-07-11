@@ -1,41 +1,39 @@
-# Class 8
+-   [Class 8: Data in R](#class-8-data-in-r)
+    -   [Functions](#functions)
+        -   [Exercise 1](#exercise-1)
+        -   [Exercise 2](#exercise-2)
+        -   [Exercise 3](#exercise-3)
+    -   [Vectors](#vectors)
+        -   [Exercise 4](#exercise-4)
+        -   [Exercise 5](#exercise-5)
+        -   [Exercise 6](#exercise-6)
+        -   [Exercise 7](#exercise-7)
+        -   [Exercise 8](#exercise-8)
+    -   [Operations on vectors](#operations-on-vectors)
+        -   [Exercise 9](#exercise-9)
+        -   [Exercise 10](#exercise-10)
+        -   [Examples:](#examples)
+            -   [Exercise 11](#exercise-11)
+    -   [Accessing elements of a
+        vector](#accessing-elements-of-a-vector)
+        -   [Exercise 12](#exercise-12)
+        -   [Exercise 13](#exercise-13)
+        -   [Exercise 14](#exercise-14)
+        -   [Exercise 15](#exercise-15)
+    -   [Working directory](#working-directory)
+        -   [Exercise 16](#exercise-16)
+    -   [Let’s start some real work!](#lets-start-some-real-work)
+    -   [Data frames](#data-frames)
+    -   [Data import and display](#data-import-and-display)
+        -   [Exercise 17](#exercise-17)
+        -   [Exercise 18](#exercise-18)
+        -   [Exercise 19](#exercise-19)
+        -   [Exercise 20](#exercise-20)
+        -   [Exercise 21](#exercise-21)
+    -   [Types of data](#types-of-data)
+        -   [Exercise 22](#exercise-22)
 
-# Data in R
-
--   [Functions](#functions)
-    -   [Exercise 1](#exercise-1)
-    -   [Exercise 2](#exercise-2)
-    -   [Exercise 3](#exercise-3)
--   [Vectors](#vectors)
-    -   [Exercise 4](#exercise-4)
-    -   [Exercise 5](#exercise-5)
-    -   [Exercise 6](#exercise-6)
-    -   [Exercise 7](#exercise-7)
-    -   [Exercise 8](#exercise-8)
--   [Operations on vectors](#operations-on-vectors)
-    -   [Exercise 9](#exercise-9)
-    -   [Exercise 10](#exercise-10)
-    -   [Examples:](#examples)
-        -   [Exercise 11](#exercise-11)
--   [Accessing elements of a vector](#accessing-elements-of-a-vector)
-    -   [Exercise 12](#exercise-12)
-    -   [Exercise 13](#exercise-13)
-    -   [Exercise 14](#exercise-14)
-    -   [Exercise 15](#exercise-15)
--   [Working directory](#working-directory)
-    -   [Exercise 16](#exercise-16)
--   [Let’s start some real work!](#lets-start-some-real-work)
--   [Data frames](#data-frames)
--   [Data import and display](#data-import-and-display)
-    -   [Exercise 17](#exercise-17)
-    -   [Exercise 18](#exercise-18)
-    -   [Exercise 19](#exercise-19)
-    -   [Exercise 20](#exercise-20)
-    -   [Exercise 21](#exercise-21)
--   [Types of data](#types-of-data)
-    -   [Exercise 22](#exercise-22)
-
-------------------------------------------------------------------------
+# Class 8: Data in R
 
 ## Functions
 
@@ -60,7 +58,7 @@ Open the manual for `paste()` function
 > Usually a manual contains seven sections:  
 > - `Description` - what the function does  
 > - `Usage` - syntax  
-> - `Arguments` - names of arguments passed to the function and their
+> - `Arguments` - names of arguments passed to the function and their \>
 > meaning  
 > - `Details` - detailed description of the function behaviour  
 > - `Value` - the type of object the function returns  
@@ -98,8 +96,8 @@ Expected result:
 Note that whitespaces were replaced with underscore. However, where did
 the blank spaces come from at the first time? The answer is that some
 arguments have their default values that would be taken if no value for
-this argument is provided when calling the function.  
-In the example above case the default value for `sep` argument is space.
+this argument is provided when calling the function. In the example
+above case the default value for `sep` argument is space.
 
 > #### Use argument names!
 >
@@ -107,11 +105,11 @@ In the example above case the default value for `sep` argument is space.
 > Although R can often “guess” the argument name from the order in which
 > arguments appear, this not always works, especially, when the number
 > of arguments is not strictly defined (`...` in the function
-> description).  
-> Another reason for using argument names is code readability, which is
-> important for other users and for the future you! Try to stick to this
-> rule as much as you can, although we admit that in commonly used
-> functions with limited number of arguments it’s not always necessary.
+> description). Another reason for using argument names is code
+> readability, which is important for other users and for the future
+> you! Try to stick to this rule as much as you can, although we admit
+> that in commonly used functions with limited number of arguments it’s
+> not always necessary.
 
 ## Vectors
 
@@ -222,6 +220,8 @@ Expected results:
 
 Sort vector `repeated` from Ex. 7 and return its unique values.
 
+Expected result:
+
     ##  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
     ## [39] 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 
@@ -237,18 +237,23 @@ length 1).
 
 ### Examples:
 
-    c(1,2,3,4) + 5      # 5 is added to each element, the same as c(1,2,3,4) + c(5,5,5,5)
+``` r
+c(1,2,3,4) + 5      # 5 is added to each element, the same as c(1,2,3,4) + c(5,5,5,5)
+```
 
     ## [1] 6 7 8 9
 
-    c(1,2,3,4) + c(1,2) # the same as c(1,2,3,4) + c(1,2,1,2)
+``` r
+c(1,2,3,4) + c(1,2) # the same as c(1,2,3,4) + c(1,2,1,2)
+```
 
     ## [1] 2 4 4 6
 
 #### Exercise 11
 
 Raise each element of vector `one_to_hundred` to the power of 3. Assign
-result to variable `power_3`.  
+result to variable `power_3`.
+
 Expected result:
 
     ##   [1]       1       8      27      64     125     216     343     512     729
@@ -301,7 +306,8 @@ To obtain multiple, non-consecutive elements of a vector, use vector as
 #### Exercise 14
 
 Return 15<sup>th</sup>, 30<sup>th</sup> and 45<sup>th</sup> elements of
-the vector`power_3`.  
+the vector`power_3`.
+
 Expected result:
 
     ## [1]  3375 27000 91125
@@ -328,20 +334,21 @@ Expected result:
 > save the R history. Change file name to include your surname and send
 > it to your course instructor via email.
 >
->     savehistory(file = "my_history.txt")     # saves your R history to the file "my_history.txt"
->     getwd()                                  # displays where the file was saved
+> ``` r
+> savehistory(file = "my_history.txt")     # saves your R history to the file "my_history.txt"
+> getwd()                                  # displays where the file was saved
+> ```
 
 ## Working directory
 
 Working directory is a folder on your computer where R is operating at
 the moment. Think about it as a separate room for a given analysis. R
 will look for and save all files in the working directory by default.
-You can check the current working directory by typing `getwd()`.
-
-To set new working directory in RStudio use
-`Session -> Set Working Directory -> Choose Directory` or use `setwd()`
-function with a destination path provided as an argument - don’t forget
-about quotes.
+You can check the current working directory by typing `getwd()`. To set
+new working directory in RStudio
+use`Session -> Set Working Directory -> Choose Directory` or use
+`setwd()` function with a destination path provided as an argument -
+don’t forget about quotes.
 
 Unless you continue a previous analysis, ALWAYS set the new working
 directory.
@@ -361,7 +368,7 @@ Create a new folder and set it as your working directory.
 Before performing any new analysis in RStudio make sure three things are
 done:
 
-1.  The appropriate working directory is set.  
+1.  The appropriate working directory is set.
 2.  New R script file with extension `.R` is created
     (`File -> New File -> Rscript`).
 3.  Global environment is empty. You can clear it by clicking the
@@ -408,8 +415,10 @@ used extensions:
 Copy and execute the command below to download the file `CO2.csv` we are
 going to work with, to your working directory: \`
 
-    download.file(url = "https://dl.dropbox.com/s/41kxqpagkvimsle/CO2.csv?dl=1",
-                  destfile = paste(getwd(),"/CO2.csv",sep = ""))
+``` r
+download.file(url = "https://dl.dropbox.com/s/41kxqpagkvimsle/CO2.csv?dl=1",
+              destfile = paste(getwd(),"/CO2.csv",sep = ""))
+```
 
 ------------------------------------------------------------------------
 
@@ -455,10 +464,9 @@ are shown below:
 > While importing a new file int R, it’s a good practice to display it
 > before in any simple, external text editor (e.g., Notepad++) to see
 > its structure. It helps to set the arguments of `read.table()`
-> properly.  
-> Displaying tables in a console is often not very informative,
-> especially when the number of columns or rows is large.  
-> R Studio provides an easy tool for intuitive visualization of data
+> properly. Displaying tables in a console is often not very
+> informative, especially when the number of columns or rows is large. R
+> Studio provides an easy tool for intuitive visualization of data
 > frames. It’s `View()` function (note that it starts with a capital
 > letter). You can call it also by simply clicking on a data frame
 > within the `Environment` panel.
@@ -500,7 +508,7 @@ column is defined by its **type**. The most popular types are:
     the [nominal
     scale](https://www.statsdirect.com/help/basics/measurement_scales.htm).
     Set as default for columns with strings. To change this behavior set
-    the `stringAsFactors` argument of importing function to `FALSE`.  
+    the `stringAsFactors` argument of importing function to `FALSE`.
 -   `double` - real (floating point) numbers
 -   `integer` - integer. Both `integer` and `double` can be interpreted
     as numbers, therefore they together constitute type `numeric`.

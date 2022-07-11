@@ -1,27 +1,4 @@
-# Class 7
-
-# R and RStudio basics
-
--   [What is R?](#what-is-r)
--   [Installation](#installation)
--   [R as a calculator](#r-as-a-calculator)
-    -   [Exercise 1](#exercise-1)
-    -   [Exercise 2](#exercise-2)
-    -   [Exercise 3](#exercise-3)
-    -   [Exercise 4](#exercise-4)
-    -   [Exercise 5](#exercise-5)
--   [RStudio](#rstudio)
-    -   [Installation and appearance](#installation-and-appearance)
-        -   [Exercise 6](#exercise-6)
--   [Variables](#variables)
-    -   [Exercise 7](#exercise-7)
-    -   [Exercise 8](#exercise-8)
-    -   [Exercise 9](#exercise-9)
-    -   [Exercise 10](#exercise-10)
--   [str() and understanding the structure of R
-    objects](#str-and-understanding-the-structure-of-r-objects)
-
-------------------------------------------------------------------------
+# Class 7: R and RStudio basics
 
 ## What is R?
 
@@ -40,15 +17,17 @@ is an important asset of any biologist.
 
 To install R for Windows follow the
 [link](https://cran.r-project.org/bin/windows/base/) and then click on
-“Download - *version\_number* - for Windows” As of the time of writing
+“Download - *version_number* - for Windows” As of the time of writing
 the currect R version was 4.2.1.  
 To install R for OS X (Macs) follow the
 [link](https://cran.r-project.org/) and then click on “Download R for
 (Mac) OS”  
 To install R for Linux type the following lines in the terminal:
 
-    sudo apt-get update
-    sudo apt-get install r-base
+``` bash
+sudo apt-get update
+sudo apt-get install r-base
+```
 
 Run R. You should see a window similar to the one below. Your language
 version may differ, below is the Polish one. Language version don’t
@@ -106,7 +85,8 @@ by typing `pi`.
 
 #### Exercise 4
 
-Calculate the area of circle which radius equals 40 meters.  
+Calculate the area of circle which radius equals 40 meters.
+
 Expected result:
 
     ## [1] 5026.548
@@ -125,15 +105,15 @@ Expected result:
 > `log()` natural logarithm  
 > `log10()` logarithm with base 10  
 > `exp()` raises the Euler number (e, the base of the natural logarithm)
-> to a given power  
-> `sin()`, `cos()`, `tan()` trigonometric functions  
+> to a given power `sin()`, `cos()`, `tan()` trigonometric functions  
 > `abs()` absolute value  
 > The argument of a function is provided in parentheses, e.g., exponent
 > of e for `exp()` or the angle in radians for trigonometric functions.
 
 #### Exercise 5
 
-Calculate the natural logarithm and logarithm with base 10 of 1000.  
+Calculate the natural logarithm and logarithm with base 10 of 1000.
+
 Expected result:
 
     ## [1] 6.907755
@@ -163,17 +143,17 @@ RStudio has three major advantages over the classical R console:
     extension)  
 -   running any piece of previously written code (reanalysis)
 -   displaying all R objects and variables saved in your computer memory
-    at any given moment - you can check whether R is doing behind the
+    at any given moment you can check whether R is doing behind the
     scenes what you think is doing
 -   projects (see next class)
 
 The R Studio workspace consists of four main panels:
 
-![Rstudio\_ide](https://sfg-ucsb.github.io/fishery-manageR/images/rstudio_ide.png)
+![Rstudio_ide](https://sfg-ucsb.github.io/fishery-manageR/images/rstudio_ide.png)
 
-1.  **Code editor** - write your code and save it in a text file (.R).
-    You can run it anytime by highlighting a given piece of code and
-    clicking `Run` in right-top corner (or pressing
+1.  **Code editor** - write your code and save it in a text file
+    (.R).You can run it anytime by highlighting a given piece of code
+    and clicking `Run` in right-top corner (or pressing
     <kbd>Ctrl</kbd>+<kbd>R</kbd>).
 2.  **Console** - Exactly the same console as in standard R (see above).
     Note that any line of code run from *Code editor* will appear in the
@@ -230,7 +210,8 @@ shortcut <kbd>Alt</kbd>+<kbd>-</kbd>.
 #### Exercise 7
 
 Assign `5` to a variable, giving it any name you want. Then type the
-name in console and press <kbd>Enter</kbd>.  
+name in console and press <kbd>Enter</kbd>.
+
 Expected result:
 
     ## [1] 5
