@@ -1,0 +1,453 @@
+---
+title: "Class 9: Subsetting and working with dataframes"
+authors: "Tomasz Gaczorek & Wieslaw Babik"
+output: 
+      md_document:
+        variant: markdown_github
+        toc: true
+        toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Class 9: Subsetting and working with data frames
+
+## Subsetting
+
+Data frame can be subset with the use of coordinates (indexes) enclosed within the square brackets. In case of data frames there are always two coordinates: `[row_number, column_number]`. Note that vectors have only a single coordinate, the position, so they are one-dimensional objects. Data frames have two dimensions: rows and columns.
+
+#### Exercise 1
+
+Return the value from 49<sup>th</sup> row and 4<sup>th</sup> column of `my_data` from the previous class (use your script/history to get this variable).
+
+Expected result:
+
+```{r}
+my_data <- readRDS("my_data.rds")
+my_data[49, 4]
+```
+
+-----
+
+You can retrieve multiple values at the same time. To define a range of coordinates, use colon to separate range limits: `[row_number_1:row_number_2, column_number]`.
+
+#### Exercise 2
+
+Return first 5 rows of the last 3 columns of `my_data`. To check the number of rows and columns use `str()`, which will give you also extra info about the data frame, or `dim()` which will return just the number of rows and columns
+
+Expected result:
+
+```{r}
+my_data[1:5, (ncol(my_data)-2):ncol(my_data)]
+```
+
+-----
+
+If you want to get all rows or columns, it’s enough to put nothing instead of the respective coordinate, e. g. `[, column_number]` will return all rows for the column.
+
+#### Exercise 3
+
+Now, save the 5<sup>th</sup> column of `my_data` as variable `my_column_5`. Call call the variable, so its content is displayed in your console.
+
+Expected result:
+
+```{r}
+my_column_5 <- my_data[, 5]
+my_column_5
+```
+
+-----
+
+Note that the result is no longer a table. As we asked for just one column, a series of numbers (vector) was returned. Let’s recall vector subsetting.
+
+#### Exercise 4
+
+Return 3<sup>rd</sup>, 4<sup>th</sup> and 5<sup>th</sup> value from `my_column_5`.
+
+Expected result:
+
+```{r}
+my_column_5[3:5]
+```
+
+-----
+
+> #### Important
+> 
+> Pulling one row from the data frame will not result in a vector. It’s because a row can contain elements of different types, which is not allowed for vectors.
+
+Data frame can also be subset with the use of column (or row, if they exist) names.
+
+#### Exercise 5
+
+Return the same column as in Ex. 3, but use column name instead of its number. Don’t forget about quotation marks.
+
+Another way of obtaining an entire column is to use dollar sign between data frame and column names `dataframe_name$column_name`. Such expression is automatically treated as vector, so it can be directly subset to get a particular row: `dataframe_name$column_name[row_number]`.
+
+#### Exercise 6
+
+Return values of rows 15<sup>th</sup> to 30<sup>th</sup> of `conc` column from `my_data`. Use `$` sign.
+
+Expected result:
+
+```{r}
+my_data$conc[15:30]
+```
+
+-----
+
+If desired rows (or columns) do not follow each other and the range option can’t be used, vector of coordinates should be provided.
+
+#### Exercise 7
+
+Create a vector of integers with values 3, 5, 7, 9 and 12 and save it to a variable. Call it.
+
+Expected result:
+
+```{r}
+(v <- c(3, 5, 7, 9, 12))
+```
+
+-----
+
+#### Exercise 8
+
+Return rows of `my_data` `uptake` column corresponding to the numbers in the vector created in the previous exercise.
+
+Expected result:
+
+```{r}
+my_data$uptake[v]
+```
+
+-----
+
+You can also select everything except specified columns (or rows), i. e., drop rows or columns. To do this, put minus (-) before an index or vector of indexes.
+
+#### Exercise 9
+
+Return all columns of `my_data` except 5<sup>th</sup>.
+
+Expected result:
+
+```{r}
+my_data[, -5]
+```
+
+-----
+
+### Logical expressions
+
+The simplest data type in R is **logical**, with only two values allowed: `TRUE` and `FALSE`. It’s simple, but powerful and versatile, as we’ll see in a moment. Logical values, as any other basic data type in R can be combined into vectors.
+
+#### Exercise 10
+
+Create a logical vector named `my_logical` with 3 `TRUE` and 2 `FALSE` values and call it. Note that `TRUE` and `FALSE` are internal R symbols so you should not use quotation marks. 
+
+Expected result:
+
+```{r}
+(my_logical <- c(rep(TRUE, 3), rep(FALSE, 2)))
+```
+
+-----
+
+> #### Logical values
+> 
+> To save typing you can use `T` instead of `TRUE` and `F` instead of `FALSE`. Please make sure, however, that this doesn’t make your code leass readable. Formally, logical values correspond to `0` (`FALSE`) and `1` (`TRUE`) and behave accordingly in mathematical operations.
+
+#### Exercise 11
+
+Calculate the sum of `my_logical`  
+
+Expected result:
+
+```{r}
+sum(my_logical)
+```
+
+-----
+
+Logical vectors have one hugely important and useful characteristic: they can be used for subsetting. To achieve this you need to provide a logical vector with `TRUE` for the elements you want to keep and `FALSE` for the elements you want to discard. The length of the logical vector used for subsetting has to be equal to the number of elements (e.g., columns) in the object we want to subset.
+
+#### Exercise 12
+
+Save the first six rows of built-in `CO2` dataset to a variable. Then, using a logical vector return its 1<sup>st</sup> and 5<sup>th</sup> column.  
+
+Expected result:
+
+```{r}
+a <- CO2[1:6,]
+a[, c(T, F, F, F, T)]
+```
+
+This works, but doesn’t seem to be really useful. To appreciate subsetting with logical vectors, let’s move on\!
+
+-----
+
+### Comparisons
+
+We don’t usually create logical vectors manually. They are instead created automatically as the result of various comparisons done by R. The most common is checking for **equality**. The operator for equality is the double equals sign (`==`).
+
+#### Exercise 13
+
+Check whether in R: 5 equals 5.00 and whether \(\pi\) equals 3.14.  
+
+Expected result:
+
+```{r}
+5 == 5.0
+pi == 3.14
+```
+
+-----
+
+> #### Comparisons in R
+> 
+>   - `==` equal
+>   - `!=` not equal (different)
+>   - `>` greater than
+>   - `>=` greater than or equal to
+>   - `<` less than
+>   - `<=` less than or equal to
+
+Note that when comparing two vectors with the symbols shown above, R doesn’t consider the action as a single comparison. It rather compares them element by element, recycling the shorter vector. The result is a logical vector of length equal to the length of the longer vector. The rule is the same as for mathematical operations on vectors.
+
+#### Exercise 14
+
+Manually create two vectors. The first with prime numbers and the second with even numbers from the range \<0, 10\>. Check whether they are equal. Then, modify the first vector to be the same length as the second one but make sure the outcome of comparison doesn’t change.  
+
+Expected result:
+
+```{r}
+prime <- c(2, 2, 3, 5, 7)
+ev <- c(2, 4, 6, 8, 10)
+prime == ev
+```
+
+-----
+
+To check whether entire vectors are identical use `identical()` function.
+
+#### Exercise 15
+
+Create two integer vectors from 1 to 10, name them differently and compare them with `identical()` function. Then, change one element in the first vector and repeat comparison.  
+
+Expected result:
+
+```{r}
+fi <- c(1:10)
+se <- c(1:10)
+identical(fi, se)
+fi[[1]] <- 5
+identical(fi, se)
+```
+
+-----
+
+Another useful tool is `%in%` operator. It provides, for each element of the first vector, information whether this element is present anywhere in the second vector. Note that this action focuses on the first vector only, so there is no recycling. The result is a logical vector of the length equal to the that of the first vector.
+
+#### Exercise 16
+
+Create two character vectors, each consisting of a set of individual characters. The first should contain your name and the second one a name of another person from the group. Check how many letter your names have in common.
+
+-----
+
+### Negation
+
+The exclamation mark (`!`) works in R as the symbol of negation. Any logical vector preceded by `!` will result in its reversal - `FALSE` changed into `TRUE` and vice versa.
+
+#### Exercise 17
+
+Construct a vector of three `TRUE` values and return its negation.  
+
+Expected result:
+
+```{r}
+!c(rep(TRUE,3))
+```
+
+Typically, `!` is used to negate comparisons. Note that the idea is the same as above: you negate a logical vector by negating the action that produces it. Remember that negated comparison should be enclosed in parentheses, e. g., `!(2 == 2)`.
+
+#### Exercise 18
+
+Create sequence of integers from the range \<1, 100\>, in which each subsequent element is larger by 3 than the previous one. Then, create a logical vector indicating which elements are larger than 50. Do not use `>` sign.  
+
+Expected result:
+
+```{r}
+b <- seq(from = 1, to = 100, by = 3)
+!(b <= 50)
+```
+
+### Logical operators
+
+The real power of logical operation is provided by combining comparisons (use parentheses for clarity). There are two basic logical operators:
+
+  - `&` **AND** - condition is TRUE if both comparisons are TRUE
+  - `|` **OR** - condition is TRUE if at least one comparison is TRUE
+
+#### Exercise 19
+
+For integer vector 1:10, create a logical vector indicating which elements are smaller or larger than 5.  
+
+Expected result:
+
+```{r}
+(c(1:10) < 5) | c(1:10 >5)
+```
+
+#### Exercise 20
+
+For integer vector 1:10, create a logical vector indicating which elements are divisible by both 2 and 3.  
+
+Expected result:
+
+```{r}
+(c(1:10) %% 2 == 0) & (c(1:10) %%3 == 0)
+```
+
+> #### `&`, `&&`, `|`, `||`
+> 
+> R provides two versions of each AND (`&`, `&&`) and OR (`|`, `||`) operators. The difference between them is that `&&` and `||` when provided with vectors check only first elements. We won’t make much use of this distinction, but it’s good to remember that such things exist, as they are useful as you progress to more advanced use of R. For more discussion see [here](https://stackoverflow.com/questions/6558921/boolean-operators-and)
+
+### `which()` function
+
+Frequently, the question is not about logical vectors themselves but rather about which elements of a vector fulfill a particular condition. The answer is provided by `which()` function. It takes comparison as its argument and returns a vector of indexes.
+
+#### Exercise 21
+
+Construct a vector with first 20 integers divisible by 3. Find positions of its elements that are \>= 21?  
+
+Expected result:
+
+```{r}
+vt <- seq(from = 3, by = 3, length.out = 20)
+(idxs <- which(vt >= 21))
+```
+
+-----
+
+#### Exercise 22
+
+Having indexes from the previous exercise, return the corresponding values from the vector. 
+
+Expected result:
+
+```{r}
+vt[idxs]
+```
+
+-----
+
+### Subsetting with logical expressions
+
+As explained above, subsetting can be done directly with logical vectors (elements in positions corresponding to TRUE in another vector are retained) or indexes generated by `which()` function. In practice, it is even simpler. All you need to provide is a condition instead of a coordinate, i.e., `vector[condition]` will return only the elements fulfilling the condition. The logic behind is as follows:  
+1\. Condition generates a logical vector of the length equal to that of the original vector (the one you want to subset); in this logical vector `TRUE` is in positions of the original vector that fulfill the condition and `FALSE` is in the remaining positions.  
+2\. Returned are only those elements of the original vector that correspond to `TRUE` in the logical vector
+
+#### Exercise 23
+
+For integer vector 1:100, return elements larger than vector’s mean.
+
+Expected result:
+
+```{r}
+d <- c(1:100)
+d[d > mean(d)]
+```
+
+## Operations on data frames, part 1
+
+### Replacement
+
+Assign a particular value to a specific position in your your data frame with the use of the assignment arrow `<-`. It works just as with variable assignment: `data_frame[row_number,column_number] <- new_value`
+
+#### Exercise 24
+
+Replace 5<sup>th</sup> value in the column `Type` of `my_data` with the label `"Unknown"`. Check whether this was indeed replaced.
+
+-----
+
+### Mathematical operations
+
+You can use standard mathematical operators: `+`, `-`, `*` and `/`. Remember, however, that mathematical operations make sense only for **numeric** data types.
+
+#### Exercise 25
+
+The `conc` column of `my_data` gives CO2 concentration in ul/L, recalculate concentration to ml/L and modify the column. Display the modified column.
+
+Expected result:
+
+```{r}
+recalc <- my_data$conc/1000
+my_data$conc <- recalc
+my_data$conc
+```
+
+-----
+
+Also, you can use simple summary functions from the previous class.
+
+#### Exercise 26
+
+Calculate the mean value of the `uptake` column.
+
+Expected result:
+
+```{r}
+mean(my_data$uptake)
+```
+
+-----
+
+### Simple summaries
+
+  - `nrow()` number of rows
+  - `ncol()` number of columns
+  - `summary()` descriptive statistics for each column
+
+#### Exercise 27
+
+Return the total number of cells within `my_data`.
+
+Expected result:
+
+```{r}
+nrow(my_data)*ncol(my_data)
+```
+
+#### Exercise 28
+
+Display summary of `my_data`. Note that the type of the info displayed by `summary()` depends on the type of the data in a particular column. 
+
+Expected result:
+
+```{r}
+summary(my_data)
+```
+
+Note that the type of the info displayed by `summary()` depends on the type of the data in a particular column. Check what would change in summary if you changed the type of the column `Type` to character.
+
+### Deleting rows containing missing data
+
+Missing data, as explained in the previous class, are represented as `NA` (Not Available) in R. Many functions will raise an error every time they encounter `NA` as their arguments or their parts. Many functions, on the other hand, allow you to automatically discard `NA`. The default behaviour of not ignoring `NA` is by design, as `NA`s actually carry important information about your data.
+
+#### Exercise 29
+
+Choose one cell of `my_data` and replace its value with `NA`. Do not add quotation marks as `NA` is an internal R symbol (just as \(\pi\)). Print the entire row.
+
+-----
+
+Rows with missing data can be removed with `na.omit()` function. To save changes, the result of `na.omit()` function must be assigned to variable. In practice, as explained above, **deleting missing data must be well justified and many functions have special arguments that inform them how to deal with missing data, so you don’t have to remove them from your data**.
+
+> #### `is.na()`
+> 
+> `is.na()` is a much used function that checks which elements of its argument are `NA`. It works with vectors including, of course, that of length one, as well as with data frames.
+
+#### Exercise 30
+
+Remove the row with missing data created in the previous exercise. Replace `my_data` with such modified table. Remember that this action cannot be undone.
