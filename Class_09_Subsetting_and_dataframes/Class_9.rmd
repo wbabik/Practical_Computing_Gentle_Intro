@@ -1,9 +1,13 @@
 ---
 title: "Class 9: Subsetting and working with dataframes"
-authors: "Tomasz Gaczorek & Wieslaw Babik"
+author: "Tomasz Gaczorek & Wiesław Babik"
+date: "`r Sys.Date()`"
 output: 
-      md_document:
-        variant: markdown_github
+#      md_document:
+#        variant: markdown_github
+#        toc: true
+#        toc_depth: 4
+      github_document:
         toc: true
         toc_depth: 4
 ---
@@ -11,9 +15,6 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-
-# Class 9: Subsetting and working with data frames
 
 ## Subsetting
 

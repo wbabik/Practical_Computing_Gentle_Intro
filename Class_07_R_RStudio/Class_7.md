@@ -1,4 +1,26 @@
-# Class 7: R and RStudio basics
+Class 7: R and RStudio basics
+================
+Tomasz Gaczorek & Wieslaw Babik
+2022-07-12
+
+-   [What is R?](#what-is-r)
+-   [Installation](#installation)
+-   [R as a calculator](#r-as-a-calculator)
+    -   [Exercise 1](#exercise-1)
+    -   [Exercise 2](#exercise-2)
+    -   [Exercise 3](#exercise-3)
+    -   [Exercise 4](#exercise-4)
+    -   [Exercise 5](#exercise-5)
+-   [RStudio](#rstudio)
+    -   [Installation and appearance](#installation-and-appearance)
+        -   [Exercise 6](#exercise-6)
+-   [Variables](#variables)
+    -   [Exercise 7](#exercise-7)
+    -   [Exercise 8](#exercise-8)
+    -   [Exercise 9](#exercise-9)
+    -   [Exercise 10](#exercise-10)
+-   [`str()` and understanding the structure of R
+    objects](#str-and-understanding-the-structure-of-r-objects)
 
 ## What is R?
 

@@ -1,9 +1,13 @@
 ---
-title: "R and RStudio basics"
+title: "Class 7: R and RStudio basics"
 author: "Tomasz Gaczorek & Wieslaw Babik"
+date: "`r Sys.Date()`"
 output: 
-      md_document:
-        variant: markdown_github
+#      md_document:
+#        variant: markdown_github
+#        toc: true
+#        toc_depth: 4
+      github_document:
         toc: true
         toc_depth: 4
 ---
@@ -11,9 +15,6 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-
-# Class 7: R and RStudio basics
 
 ## What is R?
 
