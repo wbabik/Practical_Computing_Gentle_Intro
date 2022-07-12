@@ -1,0 +1,456 @@
+---
+title: "Class 11: Operations on data frames, dplyr"
+author: "Tomasz Gaczorek & Wiesław Babik"
+date: "`r Sys.Date()`"
+output: 
+#      md_document:
+#        variant: markdown_github
+#        toc: true
+#        toc_depth: 4
+      github_document:
+        toc: true
+        toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Operations on data frames, part 2
+
+### Subsetting data frames with logical expressions
+
+The logic of subsetting vector with logical expressions can be easily extended to data frames. Note, that if you want to obtain a logical vector with one element for each row (i.e, to subset rows), you need to specify which column you want to use. For instance, if you have data frame `my_data` and you want to get all rows with the value of variable `my_column` different from 5, you would use the following expression `my_data[my_data$my_column !=5,]`. This expression will return all columns (note blank after the comma)
+
+#### Exercise 1
+
+Using built-in dataset `CO2`, return observations for `Qn2` plant.
+
+Expected result:
+
+```{r}
+CO2[CO2$Plant == "Qn2", ]
+```
+
+-----
+
+#### Exercise 2
+
+Using built-in dataset `CO2`, return observation from Mississippi chilled plant with an uptake higher than 0.02 mmol/m<sup>2</sup> x s.
+**Tip** Check the description of the `CO2` dataset for the `uptake` units.  
+
+Expected result:
+
+```{r}
+CO2[CO2$uptake > 20 & CO2$Type == "Mississippi" & CO2$Treatment == "chilled", ]
+```
+
+-----
+
+### Adding new column or row
+
+Adding **new column** is relatively **simple**. All you need to have is a vector. However, remember three things:
+
+- the length of vector must equal the number of rows of the data frame
+- the order of values within a vector corresponds to the row numbers
+- the name of the vector will become the name of the added column
+
+We are going to add a column with IDs of observations to the `my_data` data frame created during Class 9.Note that column with IDs is often necessary in statistical analysis. It is also inherent to the data in [long format](https://www.theanalysisfactor.com/wide-and-long-data/) which is strongly advised (see class 1 and next class).
+
+#### Exercise 3
+
+Create vector with ID numbers starting from 100. Use one of the
+functions introduced previously to determine what should be the length of the
+vector, considering the length of `my_data`. Name the vector `ID`.  
+Expected result:
+
+```{r}
+my_data <- readRDS("../Class_09_Subsetting_and_dataframes/my_data.rds")
+my_data <- my_data[1:nrow(my_data)-1, ]
+(ID <- seq(from = 100, by = 1, length.out = nrow(my_data)))
+```
+
+-----
+
+You can combine data frames with the use of `cbind()` function in the following manner: `cbind(data_frame1, data_frame2)`. Note that a vector can be considered a data frame with a single column.
+
+#### Exercise 4
+
+Place created IDs at the beginning (as first column) of `my_data`.
+Overwrite `my_data` dataset.
+
+```{r}
+my_data <- cbind(ID, my_data)
+```
+
+-----
+
+Adding **new row** is more **complicated** as you cannot create a vector with different types of data. Firstly you need to create a new data frame (similar to the old one) consisting of only new row (or rows). To do this use `data.frame()` function in the following manner: `data.frame(columnName1 = value1, columnName2 = value2,...)`.
+
+#### Exercise 5
+
+Create data frame with a single row and the following values:
+`1,"Kr1","Krakow","unknown",1000,20`. Column names should correspond to
+these of `my_data`. Name the newly created data frame `Added_rows`.
+
+Expected result:
+
+```{r}
+(Added_rows <- data.frame(ID = 1, Plant = "Kr1", Type = "Kraków", 
+                         Treatment = "unknown", conc = 1000, uptake = 20))
+```
+
+-----
+
+To create a data frame with multiple rows, replace the value for each
+column with a vector.
+
+To combine data frames by rows use `rbind()` function in the following
+manner: `rbind(data_frame1, data_frame2)`
+
+#### Exercise 6
+
+Add the row created in Ex. 5 at the end of `my_data`. Overwrite
+`my_data` data frame.
+
+```{r}
+my_data <- rbind(my_data, Added_rows)
+```
+
+-----
+
+### Saving data frame
+
+To save your data frame into a text file use `write.table()` function.
+
+#### Exercise 7
+
+Save the modified `my_data` int a `.csv` file. Consult `write.table()` manual to set the arguments. Include your surname in the file name.
+
+-----
+
+## `dplyr` and `tidyverse`
+
+`dplyr` is a package from `tidyverse` ecosystem (a set of packages sharing a common philosophy), which has been enjoying an enormous popularity in recent years. Sometimes even one has an impression that people equate R with `tidyverse`. The main purpose of `dplyr` is to simplify work with data frames. In this course we first introduced base R, because we are convinced that its understanding is critical for efficient work in R. During this class you’ll learn how to use `dplyr` and we’ll go through a real-life example of filtering and summarizing a complex, “real”, data. For more info on `tidyverse` see [webpage](https://www.tidyverse.org/) and [free book](https://r4ds.had.co.nz/)
+
+## Six `dplyr` verbs
+
+We’ll illustrate the basic `dplyr` functions (verbs) using the built-in
+`iris` dataset that contains measurements (in cm) of several flower
+traits of several *Iris* species.
+
+#### Exercise 8
+
+Display structure and summary of `iris` dataset using `str()` and
+`summary()`. Answer the following questions:
+
+  - which traits were measured?
+  - how many flowers were measured in total?
+  - which *Iris* species were studied?
+  - what were sample sizes of particular species?
+
+Here’s a schematic view of a flower with the most important structures labeled:
+
+![flower](flower.png)
+
+-----
+
+All six functions work similarly:
+
+1.  The first argument is always a data frame.
+2.  Subsequent arguments describe what the function is supposed to do with the data frame. You can refer to the columns of the data frame without using quotation marks.
+3.  The result is a data frame.
+
+#### Exercise 9
+
+Load `dplyr` package.
+
+```{r, warning = FALSE}
+library(dplyr)
+```
+
+
+-----
+
+### Filtering rows with `filter()`
+
+`filter()` returns rows that fulfill a logical condition. You can combine any number of conditions.
+
+#### `filter()` examples
+
+Display data for *Iris setosa*
+
+```{r, echo = TRUE}
+filter(iris, Species == "setosa")
+```
+
+**Note:**
+
+- we used double equal sign (`==`) to specify a comparison
+- the column name was not enclosed in quotation marks, while the value (species name, character string) was.
+
+Display all observations for *Iris setosa* that have sepal length at least 5.5 cm:
+
+```{r, echo = TRUE}
+filter(iris, Species == "setosa", Sepal.Length >= 5.5)
+```
+
+If both conditions are to be met, they can be separated by comma (`,`) or by the AND sign (`&`):
+
+```{r, echo = TRUE}
+filter(iris, Species == "setosa" & Sepal.Length >= 5.5)
+```
+
+You can use alternatives and group conditions using parentheses. To
+display all observations of *I. versicolor* and *I. virginica* that have
+petal length at least 5 cm:
+
+```{r, eval = FALSE, echo = TRUE}
+filter(iris, (Species == "versicolor" | Species == "virginica"), Petal.Length >=5)
+```
+
+or
+
+```{r, echo = TRUE}
+filter(iris, (Species == "versicolor" | Species == "virginica") & Petal.Length >=5)
+```
+
+
+Note, that the following doesn’t work:
+
+```{r, echo = TRUE, error = TRUE}
+filter(iris, (Species == "versicolor" | "virginica"), Petal.Length >=5)
+```
+
+#### Exercise 10
+
+Select all observations, regardless of species, that have sepal length
+smaller than 6 cm or petal length smaller than 5 cm, and sepal width
+larger than 4 cm.
+
+Expected result:
+
+```{r}
+filter(iris, (Sepal.Length < 6 | Petal.Length < 5) & Sepal.Width > 4 )
+```
+
+-----
+
+### Ordering rows with `arrange()`
+
+`arrange()`returns data frame sorted according to a column or a combination of columns. If you provide more than one column, each additional column will be used to break the ties. If you want to sort according to a column in descending order, use `desc()`. Note, that numbers stored as character are sorted differently than numbers stored as numeric, and when sorting logical values `FALSE` (`0`) comes before `TRUE` (`1`).
+
+#### `arrange()` example
+
+Sort the `iris` dataset according to species in alphabetical (ascending) order and within the species from the longest to the shortest sepal
+
+```{r, echo = TRUE}
+arrange(iris, Species, desc(Sepal.Length))
+```
+
+----
+
+#### Exercise 11
+
+Sort species in descending order, and observations within each species
+according to the increasing petal length.
+
+Expected result:
+
+```{r}
+arrange(iris, desc(Species), Petal.Length )
+```
+
+-----
+
+### Picking, dropping and re-ordering columns with `select()`
+
+Select selects, drops or re-arranges columns of a data frame. Columns can be referred to by name, position in the data frame or by an expression.
+
+> #### `select` helpers
+> 
+> The following helper functions can be used to select columns that match a pattern:
+> 
+> `starts_with()` selects columns that start with a string  
+> `ends_with()` selects columns that end with a string  
+> `contains()` selects columns that contain a string  
+> `matches()` selects columns matching a regular expression
+> 
+> There are also useful helpers that allow to select column on the basis
+> of a character vector containing names. See `?select` for more
+> details.
+
+#### `select()` examples
+
+Select `iris` columns 1, 2, 3 and 5:
+
+```{r, echo = TRUE}
+select(iris, 1:3, 5)
+```
+
+or, just drop column 4:
+
+```{r, echo = TRUE}
+select(iris, -4)
+```
+
+Select species name and petal measurements:
+
+```{r, echo = TRUE}
+select(iris, Species, starts_with("Petal"))
+```
+
+The example above shows that `select()` can be used to reorder variables. A useful trick to move a single column (here `Species`) to the beginning of the data frame:
+
+```{r, echo = TRUE}
+select(iris, Species, everything())
+```
+
+#### Exercise 12
+
+Select width measurements and species from `iris`, at the same time relocating species to the beginning of the data frame.  
+
+Expected result:
+
+```{r}
+select(iris, Species, ends_with("Width"))
+```
+
+-----
+
+#### Exercise 13
+
+Drop petal measurements from `iris` data frame.  
+
+Expected result:
+
+```{r}
+select(iris, -starts_with("Petal"))
+```
+
+-----
+
+### Creating new variables as functions of the existing ones with `mutate()`
+
+`mutate()` adds a new column at the end of the data frame. The value of this column can be a single element vector provided by the user or, usually more usefully, a formula that uses values of other variables. Once you create the new column, you can immediately use it in the same `mutate()` call.
+
+#### `mutate` examples
+
+Add to `iris`a new variable called `One` with the value `1` and the data type character for all observations.
+
+```{r, echo = TRUE}
+mutate(iris, One = "1")
+```
+
+Create new variable named `Petal.Ratio`, the value of which will be the
+ratio of petal length to petal width:
+
+```{r, echo = TRUE}
+mutate(iris, Petal.Ratio = Petal.Length/Petal.Width)
+```
+
+#### Exercise 14
+
+Create, using a single `mutate()` call, two new variables: Petal.Length.Squared, Sepal.Length.Squared, containing the squared length of petal and sepal, respectively.
+
+Expected result:
+
+```{r}
+mutate(iris, Petal.Length.Squared = Petal.Length^2,
+       Sepal.Length.Squared = Sepal.Length^2)
+```
+
+-----
+
+### Grouping cases by variable(s) with `group_by()`
+
+You could (rightly) consider some of the preceding examples and exercises boring, so let’s move to something more exciting. `group_by()` creates a **grouped data frame**, that is a data frame which rows are assigned to various groups based on the value of one or more grouping variables. The data frame itself is not changed, but the way operations on the data frame are performed is. For example, if you use a function, such as `mean()` with `mutate()`, the mean of the group to which a row belongs will be used for this row.
+
+#### `group_by()` examples
+
+Group `iris` by species
+
+```{r, eval = FALSE, echo = TRUE}
+group_by(iris, Species)
+```
+
+When you execute the command above, you’ll see that the object is not anymore `data.frame`, but now it’s called `tibble` and you’ll find information about grouping added, though no information in the table was altered:
+
+```{r}
+group_by(iris, Species)
+```
+
+
+#### Exercise 15
+
+Group `iris` by species, assign the grouped dataset to variable, and use mutate to add column `Mean.Sepal.Length`, which would contain the mean value of sepal length. Are all values in this column identical? Why?
+
+-----
+
+#### The pipe operator (`%>%`)
+
+Usually, when you want to use several functions in sequence, you repeatedly assign the result to a variable, which is fine, but a bit inconvenient:
+
+```{r, echo = TRUE}
+a <- select(iris, Species, starts_with("Sepal"))
+a <- mutate(a, Sepal.Ratio = Sepal.Length/Sepal.Width)
+head(a)
+```
+
+Here’s where the **pipe** `%>%` comes handy. Although the symbol used is different, its behaviour is similar to the pipe operator `|` of the Linux shell. In conjunction with `dplyr` verbs it allows creating pipelines without the need of assigning intermediate results to variables. Note, that when a `dplyr` function is used following `%>%`, you don’t specify the data frame the function operates on - because the data frame is passed by `%>%`\!
+
+So, instead of the code above you can use:
+
+```{r, echo = TRUE}
+a <- select(iris, Species, starts_with("Sepal")) %>% mutate(Sepal.Ratio = Sepal.Length/Sepal.Width)
+head(a)
+```
+
+or
+
+```{r, echo = TRUE}
+a <- iris %>% select(Species, starts_with("Sepal")) %>% mutate(Sepal.Ratio = Sepal.Length/Sepal.Width)
+head(a)
+```
+
+Using `%>%` not only eliminates the need for intermediate variables, but also makes code more **readable**. In this case, you first take `iris`, then select some columns and then add a column based on the values of the existing columns. The way your code is written reflects the sequence of steps.
+
+Before we move on, we’ll show a useful technique that allows, for example, easy standardization. Our task is to standardize the values of sepal length by subtracting each from the species mean and dividing the result by the species standard deviation (this is called Z-standardization). Here’s the code:
+
+```{r, echo = TRUE}
+iris %>% select(Species, Sepal.Length) %>%  group_by(Species) %>%
+  mutate(sp.Mean = mean(Sepal.Length),
+         sp.SD = sd(Sepal.Length),
+         Zstand.Sepal.Length = (Sepal.Length - sp.Mean)/sp.SD)
+```
+
+we could use `select()` again to drop the intermediate variables we no longer need:
+
+```{r, echo = TRUE}
+iris %>% select(Species, Sepal.Length) %>%  group_by(Species) %>%
+  mutate(sp.Mean = mean(Sepal.Length),
+         sp.SD = sd(Sepal.Length),
+         Zstand.Sepal.Length = (Sepal.Length - sp.Mean)/sp.SD) %>% select(-c(sp.Mean, sp.SD))
+```
+
+Note, that the columns to drop were passed as a vector of column names not enclosed in quotation marks (quotation marks are allowed, but not necessary).
+
+### Summarising with `summarise()`
+
+When used on a data frame that is not grouped `summarise` just applies a function to a column and returns a small data frame containing the result:
+
+```{r, echo = TRUE}
+summarise(iris, mean.Sepal.Length = mean(Sepal.Length))
+```
+
+This may be useful, but rather not terribly so.
+
+Things change when you use summarise with a grouped data frame. Then, writing very little code you can get lots of useful results:
+
+```{r, echo = TRUE}
+iris %>% select (Species, Petal.Length) %>% group_by(Species) %>% 
+  summarise(min.Petal.Length = min(Petal.Length),
+            mean.Petal.Length = mean(Petal.Length), 
+            max.Petal.Length = max(Petal.Length))
+```
+
