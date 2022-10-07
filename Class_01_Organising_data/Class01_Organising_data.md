@@ -230,4 +230,4 @@ Very often some information in you data is missing, for instance you have not re
 
 ### Exercise 1
 
-Provided [MS Excel](Korniki_Izolacja gDNA.xlsx) file is a fragment of the dataset containing information about DNA isolates from the spruce bark bettle. Please correct the Excel file according to the rules you have learned today and send it to your instructor with your initials at the end of the filename. Remember about the file naming rules!
+Provided [MS Excel](<Korniki_Izolacja gDNA.xlsx>) file is a fragment of the dataset containing information about DNA isolates from the spruce bark bettle. Please correct the Excel file according to the rules you have learned today and send it to your instructor with your initials at the end of the filename. Remember about the file naming rules!
