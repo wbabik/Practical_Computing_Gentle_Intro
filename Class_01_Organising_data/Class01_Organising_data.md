@@ -81,12 +81,12 @@ Biological data come in a bewildering variety of types and formats, they may be 
 ### The two rules of data organisation
 
 1. Each piece of the information should be stored only in one place, so that, if needed, it has to be modified only once.
+
 2. In the vast majority of cases the data represent some measurements of various performed on **objects** or **cases** (human subjects, individuals, soil samples etc.), some characteristics or properties of these objects. Then, the natural organisation of data is:
-
+   
    - objects/cases are in rows
-
+   
    - characteristics/measurements/properties are in columns
-
 
 These two rules are by no means obvious and we usually need some practice to internalise them and put them to good use. Below you'll find more explanations, examples and exercises. Let's start by introducing two training datasets.
 
@@ -227,3 +227,7 @@ Very often some information in you data is missing, for instance you have not re
 > - don't code missing data as `0` or blank - these are very much misleading
 > 
 > - try to use NA to code your missing data
+
+### Exercise 1
+
+Provided [MS Excel](Korniki_Izolacja gDNA.xlsx) file is a fragment of the dataset containing information about DNA isolates from the spruce bark bettle. Please correct the provided Excel file according to the rules you have learned today and send it to your instructor with your initials at the end of the filename. Remember about the file naming rules!
