@@ -45,12 +45,12 @@ We assume that you work on a computer running Windows. If you are running Linux 
 
 Please open PuTTY and:
 
-- In the `Host Name (or IP address)` field, please enter:`149.156.165.156`
-  This is the IP number of the `apollo` server we'll use during the class.
+- In the `Host Name (or IP address)` field, please enter:`149.156.165.148`
+  This is the IP number of the `kontiki` server we'll use during the class.
 
 - In the `Port` field, leave `22`. We also do not change the connection type (`SSH`).
 
-- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `apollo`.
+- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `kontiki`.
 
 - Then select `Translation` in the `Category` (left) and select `UTF-8` in the `Remote character set` field.
 
@@ -69,7 +69,7 @@ After pressing <kbd>Enter</kbd> you will be asked to enter your password.
 ## Working in a Linux terminal 
 After starting your shell session, you should see a **prompt**. It will look more or less like this:
 ```
-user181@apollo:/home/user181$
+user181@kontiki:/home/user181$
 ```   
 It contains the user name, server name, current working directory, and an invitation to type a command. We are ready to get to work!  
 &nbsp;  
