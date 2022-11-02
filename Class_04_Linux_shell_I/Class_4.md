@@ -62,11 +62,11 @@ The principle of wildcard characters is quite similar to that of regular express
 
 #### Exercise 1
 
-During today's class we will use genomic sequences of various lentiviruses (HIV and SIV) isolated from several hosts (designations of hosts are in file `/data/hiv/hiv_species.txt`). Virus sequences are in `/data/hiv`.  
+During today's class we will use genomic sequences of various lentiviruses (HIV and SIV) isolated from several hosts (designations of hosts are in file `/dane/hiv/hiv_gatunki.txt`). Virus sequences are in `/dane/hiv`.  
 
-Sequences of viruses in `/data/hiv` are in separate files, each of them with extension `.fasta`.
+Sequences of viruses in `/dane/hiv` are in separate files, each of them with extension `.fasta`.
 Do all files in the directory have extension `.fasta`? 
-Please copy from `/data/hiv` to the `~/hiv` directory only files containing sequences, i. e. with extension `.fasta`. 
+Please copy from `/dane/hiv` to the `~/hiv` directory only files containing sequences, i. e. with extension `.fasta`. 
 
 ---
 
