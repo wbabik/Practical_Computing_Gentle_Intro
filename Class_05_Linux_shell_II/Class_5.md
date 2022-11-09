@@ -32,7 +32,7 @@ After downloading and installing, open WinSCP, in the Login window in the field 
 >
 > `scp [WHAT] [WHERE]`
 >
-> For example, `scp user102@149.156.165.156:/home/user102/*.txt /home/mary` will copy all `.txt` files from user102 home directory on the remote server to home directory of user `mary` on your local computer.
+> For example, `scp user102@149.156.165.148:/home/user102/*.txt /home/mary` will copy all `.txt` files from user102 home directory on the remote server to home directory of user `mary` on your local computer.
 >
 > `scp` can be also used to copy files between different remote servers
 
