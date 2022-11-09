@@ -130,7 +130,7 @@ You can change permissions with `chmod` (change file mode)
 
 Give all users permissions to read and execute file `script1.sh`. Now, list all files in your home directory. In which colour was the name of your script displayed? Use `ls -l` to check whether your script has indeed the permissions you wanted it to have. What's in the permissions field?
 
-Now you can run the script typing: `./filename.sh`  (what's the meaning of the dot at the beginning of the command?)
+Now you can run the script typing: `./script1.sh`  (what's the meaning of the dot at the beginning of the command?)
 
 ----
 
