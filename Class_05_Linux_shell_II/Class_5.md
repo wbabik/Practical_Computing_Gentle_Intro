@@ -24,7 +24,7 @@
 
 If you work on Windows, you can copy files between your computer and remote server using WinSCP which you can download [here](https://winscp.net/eng/download.php).
 
-After downloading and installing, open WinSCP, in the Login window in the field `Host name:` enter IP address of our server, in the field `User name` enter your user id, don't fill in password. Save your session as `apollo` or another name.  By clicking `Login` you will start connection with the server, you'll be asked for your password and, after verifying your credentials, you'll see in one panel your local computer and in the other your home directory on the remote server.  You can now copy or move files between machines.
+After downloading and installing, open WinSCP, in the Login window in the field `Host name:` enter IP address of our server, in the field `User name` enter your user id, don't fill in password. Save your session as `kontiki` or another name.  By clicking `Login` you will start connection with the server, you'll be asked for your password and, after verifying your credentials, you'll see in one panel your local computer and in the other your home directory on the remote server.  You can now copy or move files between machines.
 
 > #### `scp` on Linux or Mac
 >
