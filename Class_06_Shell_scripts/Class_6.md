@@ -109,7 +109,7 @@ fi
 
 #### Exercise 1
 
-All exercises in this class will use files in directory `/data/epidemy`. Copy this directory and its entire content into your home directory (`cp -r` ). The directory contains 20,112 text files. Each of these files describes a single case of hemorrhagic fever in Poland from summer 2021 (therefore file names start with `pacjent`, which is `patient` in Polish). All files have the following format (below file for patient1 is shown):
+All exercises in this class will use files in directory `/dane/epidemia`. Copy this directory and its entire content into your home directory (`cp -r` ). The directory contains 20,112 text files. Each of these files describes a single case of hemorrhagic fever in Poland from summer 2021 (therefore file names start with `pacjent`, which is `patient` in Polish). All files have the following format (below file for patient1 is shown):
 
 ``` 
 nr 1
