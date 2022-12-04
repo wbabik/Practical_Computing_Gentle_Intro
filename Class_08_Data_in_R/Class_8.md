@@ -358,10 +358,6 @@ directory.
 
 Create a new folder and set it as your working directory.
 
-> #### R project as an alternative to working directory
->
-> TODO \[Piotrek\]
-
 ------------------------------------------------------------------------
 
 ## Let’s start some real work!
@@ -481,7 +477,7 @@ what is missing? Write your answer as a comment within the script file.
 
 #### Exercise 21
 
-Display `my_data` from Ex. 16 with `View()` function. In the view
+Display `my_data` from Ex. 19 with `View()` function. In the view
 windows click on a column header to sort the data according to the
 values in a given column. In which region CO2 uptake is the highest?
 Write your answer as a comment within the script file.
