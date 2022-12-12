@@ -45,12 +45,12 @@ We assume that you work on a computer running Windows. If you are running Linux 
 
 Please open PuTTY and:
 
-- In the `Host Name (or IP address)` field, please enter:`149.156.165.156`
-  This is the IP number of the `apollo` server we'll use during the class.
+- In the `Host Name (or IP address)` field, please enter:`149.156.165.148`
+  This is the IP number of the `kontiki` server we'll use during the class.
 
 - In the `Port` field, leave `22`. We also do not change the connection type (`SSH`).
 
-- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `apollo`.
+- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `kontiki`.
 
 - Then select `Translation` in the `Category` (left) and select `UTF-8` in the `Remote character set` field.
 
@@ -60,7 +60,7 @@ Please open PuTTY and:
 
 If you have the Linux or MacOS operating system installed on your computer, you can open a terminal window like any other program. If you would like to connect to our server (to do your homework), use the ssh-client program. In the terminal enter:
 
-`ssh 149.156.165.156 -l user102`  149.156.165.156 is the IP number our server and user102 is the user account name.
+`ssh 149.156.165.148 -l user102`  149.156.165.148 is the IP number our server and user102 is the user account name.
 
 After pressing <kbd>Enter</kbd> you will be asked to enter your password.  
 &nbsp;  
@@ -69,7 +69,7 @@ After pressing <kbd>Enter</kbd> you will be asked to enter your password.
 ## Working in a Linux terminal 
 After starting your shell session, you should see a **prompt**. It will look more or less like this:
 ```
-user181@apollo:/home/user181$
+user181@kontiki:/home/user181$
 ```   
 It contains the user name, server name, current working directory, and an invitation to type a command. We are ready to get to work!  
 &nbsp;  
@@ -244,7 +244,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 >
 > `rm [options] filename`</br>
 > `rm -r directory`
-> (remove) Removes a file with the given name.
+> (remove) Removes a directory with the given name.
 > `rm` with the `-r` option removes the directory and its content. **Warning!** Please be careful when deleting files and full directories. The `rm` command does not move them to the trash. Files and directories are permanently removed from the disk! 
 > 
 > `wc [options] filename`
@@ -297,13 +297,13 @@ Within the parent directory *scripts*, you have created another directory. Our f
 
  
 #### Exercise 5 
-Please display content of directory `/data`. How do files and directories look like?   
+Please display content of directory `/dane`. How do files and directories look like?   
 
 ---  
  
 
 #### Exercise 6
-Use autocompletion to copy the file `GCF_000001405.39 ...` from the directory `/data` to
+Use autocompletion to copy the file `GCF_000001405.33 ...` from the directory `/dane` to
 the `genome` directory you created. This is a file containing information about the human genome assembly.
 We will use it as an example of a text file later on   
 

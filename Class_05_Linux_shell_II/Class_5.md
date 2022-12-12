@@ -24,7 +24,7 @@
 
 If you work on Windows, you can copy files between your computer and remote server using WinSCP which you can download [here](https://winscp.net/eng/download.php).
 
-After downloading and installing, open WinSCP, in the Login window in the field `Host name:` enter IP address of our server, in the field `User name` enter your user id, don't fill in password. Save your session as `apollo` or another name.  By clicking `Login` you will start connection with the server, you'll be asked for your password and, after verifying your credentials, you'll see in one panel your local computer and in the other your home directory on the remote server.  You can now copy or move files between machines.
+After downloading and installing, open WinSCP, in the Login window in the field `Host name:` enter IP address of our server, in the field `User name` enter your user id, don't fill in password. Save your session as `kontiki` or another name.  By clicking `Login` you will start connection with the server, you'll be asked for your password and, after verifying your credentials, you'll see in one panel your local computer and in the other your home directory on the remote server.  You can now copy or move files between machines.
 
 > #### `scp` on Linux or Mac
 >
@@ -32,7 +32,7 @@ After downloading and installing, open WinSCP, in the Login window in the field 
 >
 > `scp [WHAT] [WHERE]`
 >
-> For example, `scp user102@149.156.165.156:/home/user102/*.txt /home/mary` will copy all `.txt` files from user102 home directory on the remote server to home directory of user `mary` on your local computer.
+> For example, `scp user102@149.156.165.148:/home/user102/*.txt /home/mary` will copy all `.txt` files from user102 home directory on the remote server to home directory of user `mary` on your local computer.
 >
 > `scp` can be also used to copy files between different remote servers
 
@@ -130,7 +130,7 @@ You can change permissions with `chmod` (change file mode)
 
 Give all users permissions to read and execute file `script1.sh`. Now, list all files in your home directory. In which colour was the name of your script displayed? Use `ls -l` to check whether your script has indeed the permissions you wanted it to have. What's in the permissions field?
 
-Now you can run the script typing: `./filename.sh`  (what's the meaning of the dot at the beginning of the command?)
+Now you can run the script typing: `./script1.sh`  (what's the meaning of the dot at the beginning of the command?)
 
 ----
 
