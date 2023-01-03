@@ -1,25 +1,29 @@
 Class 10: Plotting: base R
 ================
 Wiesław Babik
-2022-12-12
+2022-12-23
 
--   [Plotting](#plotting)
-    -   [Exercise 1](#exercise-1)
--   [Scatterplot](#scatterplot)
-    -   [The basic scatterplot](#the-basic-scatterplot)
-    -   [Saving a plot](#saving-a-plot)
-    -   [Exercise 2](#exercise-2)
-    -   [Adding features](#adding-features)
-    -   [Further customisation](#further-customisation)
-    -   [Exercise 3](#exercise-3)
-    -   [Colouring points according to
-        species](#colouring-points-according-to-species)
-    -   [Adding legend](#adding-legend)
--   [Histogram](#histogram)
-    -   [Exercise 4](#exercise-4)
-    -   [Coloured histograms for each species on a single
-        plot](#coloured-histograms-for-each-species-on-a-single-plot)
--   [What’s next?](#whats-next)
+- <a href="#plotting" id="toc-plotting">Plotting</a>
+  - <a href="#exercise-1" id="toc-exercise-1">Exercise 1</a>
+- <a href="#scatterplot" id="toc-scatterplot">Scatterplot</a>
+  - <a href="#the-basic-scatterplot" id="toc-the-basic-scatterplot">The
+    basic scatterplot</a>
+  - <a href="#saving-a-plot" id="toc-saving-a-plot">Saving a plot</a>
+  - <a href="#exercise-2" id="toc-exercise-2">Exercise 2</a>
+  - <a href="#adding-features" id="toc-adding-features">Adding features</a>
+  - <a href="#further-customisation" id="toc-further-customisation">Further
+    customisation</a>
+  - <a href="#exercise-3" id="toc-exercise-3">Exercise 3</a>
+  - <a href="#colouring-points-according-to-species"
+    id="toc-colouring-points-according-to-species">Colouring points
+    according to species</a>
+  - <a href="#adding-legend" id="toc-adding-legend">Adding legend</a>
+- <a href="#histogram" id="toc-histogram">Histogram</a>
+  - <a href="#exercise-4" id="toc-exercise-4">Exercise 4</a>
+  - <a href="#coloured-histograms-for-each-species-on-a-single-plot"
+    id="toc-coloured-histograms-for-each-species-on-a-single-plot">Coloured
+    histograms for each species on a single plot</a>
+- <a href="#whats-next" id="toc-whats-next">What’s next?</a>
 
 ## Plotting
 
