@@ -13,6 +13,6 @@ Practical Computing for MSc students at the Faculty of Biology, Jagiellonian Uni
 * [Class_9: **Subsetting and working with data frames**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_09_Subsetting_and_dataframes/Class_9.md)
 * [Class_10: **Plotting: base R**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_10_Plotting_base_R/Class_10.md)
 * [Class_11: **Operations on data frames, dplyr**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_11_Data_frames_dplyr/Class_11.md)
-* [Class_12: **Plotting: ggplot2**]
+* [Class_12: **Plotting: ggplot2**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_12_Plotting_ggplot2/Class_12.md)
 * [Class_13: **Practical dplyr**](https://github.com/wbabik/Practical_Computing_Gentle_Intro/blob/main/Class_13_practical_dplyr/Class_13.md)
 
