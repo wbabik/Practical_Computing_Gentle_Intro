@@ -1,7 +1,7 @@
 Class 12: Plotting: ggplot2
 ================
 Wiesław Babik
-2023-11-28
+2023-12-15
 
 - [Plotting](#plotting)
   - [Exercise 1](#exercise-1)
@@ -32,11 +32,11 @@ Wiesław Babik
 - [Error bars](#error-bars)
   - [Preparing data summaries](#preparing-data-summaries)
   - [Plotting with `geom_errorbar()`](#plotting-with-geom_errorbar)
-  - [Exercise 11](#exercise-11)
+  - [Exercise 10](#exercise-10)
 - [Other plot types](#other-plot-types)
   - [Boxplot, composite and violin
     plot](#boxplot-composite-and-violin-plot)
-    - [Exercise 8](#exercise-8-1)
+  - [Exercise 11](#exercise-11)
   - [Frequency polygon and area plot](#frequency-polygon-and-area-plot)
   - [Bar plot](#bar-plot)
 - [What’s next?](#whats-next)
@@ -487,7 +487,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 ### Exercise 8
 
 Looking at the linear regressions in the plot above, what can we say
-about the relative sepal width in each species?
+about sepal shape in each species?
 
 ### Facets
 
@@ -591,7 +591,7 @@ ggplot(iris_means, aes(x = Species, y = mean_PL, fill = Species, colour = Specie
 
 ![](Class_12_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
 
-### Exercise 11
+### Exercise 10
 
 Using column/barplots to visualise means is not a good idea. Try to
 produce a plot similar to the one below. It’s enough to change one geom,
@@ -615,7 +615,7 @@ ggplot(iris, aes(x = Species, y = Sepal.Length, colour = Species)) +
 
 ![](Class_12_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
-#### Exercise 8
+### Exercise 11
 
 Consult help for `geom_boxplot()` to learn what the horizontal line,
 box, whiskers and the point correspond for and propose a title for the

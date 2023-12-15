@@ -314,7 +314,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 
 ### Exercise 8 
 
-Looking at the linear regressions in the plot above, what can we say about the relative sepal width in each species?
+Looking at the linear regressions in the plot above, what can we say about sepal shape in each species?
 
 ### Facets
 
@@ -399,7 +399,7 @@ ggplot(iris_means, aes(x = Species, y = mean_PL, fill = Species, colour = Specie
                 width = 0.4, linewidth = 0.8, colour = "black")
 ```
 
-### Exercise 11
+### Exercise 10
 
 Using column/barplots to visualise means is not a good idea. Try to produce a plot similar to the one below. It's enough to change one geom, play around with one aesthetic and adjust axis limits.
 
@@ -422,7 +422,7 @@ ggplot(iris, aes(x = Species, y = Sepal.Length, colour = Species)) +
   theme_classic()
 ```
 
-#### Exercise 8
+### Exercise 11
 
 Consult help for `geom_boxplot()` to learn what the horizontal line, box, whiskers and the point correspond for and propose a title for the plot.
 
