@@ -284,10 +284,8 @@ Within the parent directory *scripts*, you have created another directory. Our f
 ## Making your life easier, and working with real files!
   
 > ### History
-> Typing commands can be tiresome, but you can reuse the commands you typed previously. The commands that were typed in the terminal are remembered as **History**. To recall them, you can use the <kbd>↑</kbd> <kbd>↓</kbd> arrows, and then change only part of the command (arrows <kbd>→</kbd> <kbd>←</kbd>, <kbd>Backspace</kbd>, <kbd>Delete</kbd> keys).
->  .
-> Also, you can use the command `history` to list commands executed recently!
-> .
+> Typing commands can be tiresome, but you can reuse the commands you typed previously. The commands that were typed in the terminal are remembered as **History**. To recall them, you can use the <kbd>↑</kbd> <kbd>↓</kbd> arrows, and then change only part of the command (arrows <kbd>→</kbd> <kbd>←</kbd>, <kbd>Backspace</kbd>, <kbd>Delete</kbd> keys). 
+> Also, you can use the command `history` to list commands executed recently! 
 > When reusing old commands, it is helpful to use shortcuts Ctrl+A, Ctrl+E - jumping to the beginning/end of the edited command.  
 &nbsp;  
   
