@@ -320,7 +320,7 @@ Usually, data imported into R are in the form of text files. Commonly used exten
 Copy and execute the command below to download the file `CO2.csv` we are going to work with, to your working directory: \`
 
 ``` r
-download.file(url = "https://www.dropbox.com/scl/fi/lj3nkgwbaiblwo9jyt0qs/CO2.csv?rlkey=jrv1inqfrej7i9ezlduytxqjh&dl=0",
+download.file(url = "https://www.dropbox.com/scl/fi/lj3nkgwbaiblwo9jyt0qs/CO2.csv?rlkey=jrv1inqfrej7i9ezlduytxqjh&dl=1",
               destfile = paste(getwd(),"/CO2.csv",sep = ""))
 ```
 
