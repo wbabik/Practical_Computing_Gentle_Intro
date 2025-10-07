@@ -35,7 +35,7 @@ Interesting things appear when we ask Word to save this as text file - there are
 ![Text-in_Notepad](text_Text_in_Notepad.png)
 
 ## Notepad++
-To explore text files in more detail we need an appropriate tool. In this class we'll use Notepad++ for Windows. If you use Mac or Linux you should contact your course instructor for alternatives. For the rest of the class we'll assume that you have Notepad++ installed on your system. You can get it [here](https://notepad-plus-plus.org/downloads/), you will probably want to install the newest 64-bit version. Please install the English language version.
+To explore text files in more detail we need an appropriate tool. In this class we'll use Notepad++ for Windows. If you use Mac you can try BBEdit, TextMate, CotEditor or Visual Studio Code (VS Code). If you use Linux you can use nano, gedit or VS Code. For the rest of the class we'll assume that you have Notepad++ installed on your system (as it is in our computer room). If you want to install it at your private machine you can get it [here](https://notepad-plus-plus.org/downloads/), you will probably want to install the newest 64-bit version. Install the English language version. VS Code is a poweful program used by many programmers and is working under all platforms but for the purpose of simple text operations during today's classes it might be an overkill.  
 
 Notepad++ is a plain text editor with many features, today we will use only a few to learn more about the nature of text files.
 
