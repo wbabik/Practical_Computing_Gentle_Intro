@@ -130,7 +130,7 @@ The command `mkdir`, or an abbreviation from *make directory*, needs to be run w
 
 - `mkdir scripts` and press <kbd>Enter</kbd>
 
-but it would mean that mkdir was reapeated three times while we could do it at once!
+ but it would mean that mkdir was reapeated three times while we could do it at once!
 
 4. Type `ls -l` and press <kbd>Enter</kbd>.  
 You can see that your home directory now contains three new directories - *hiv*, *genome*, *scripts*. Cool!  
