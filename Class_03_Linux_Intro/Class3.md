@@ -50,7 +50,7 @@ Please open PuTTY and:
 
 - In the `Port` field, leave `22`. We also do not change the connection type (`SSH`).
 
-- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `kontiki`.
+- In the `Saved Sessions` field you can enter any name, this will be the name of your connection - please type the name `kontiki` and click `Save`.
 
 - Then select `Translation` in the `Category` (left) and select `UTF-8` in the `Remote character set` field.
 
