@@ -71,6 +71,10 @@ After starting your shell session, you should see a **prompt**. It will look mor
 ```
 user181@kontiki:/home/user181$
 ```   
+or
+```
+user181@kontiki:~$
+```   
 It contains the user name, server name, current working directory, and an invitation to type a command. We are ready to get to work!  
 &nbsp;  
   
