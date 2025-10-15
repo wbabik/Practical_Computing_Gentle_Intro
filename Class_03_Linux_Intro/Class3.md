@@ -60,7 +60,7 @@ Please open PuTTY and:
 
 If you have the Linux or MacOS operating system installed on your computer, you can open a terminal window like any other program. If you would like to connect to our server, use the ssh-client program. In the terminal enter:
 
-`ssh 149.156.165.148 -l user102`  149.156.165.148 is the IP number our server and user102 is the user account name.
+`ssh 149.156.165.148 -l user102`  149.156.165.148 is the IP number of our server and user102 is the user account name.
 
 After pressing <kbd>Enter</kbd> you will be asked to enter your password.  
 &nbsp;  
