@@ -75,7 +75,7 @@ or
 ```
 user181@kontiki:~$
 ```   
-It contains the user name 'user181', server name 'kontiki', current working directory '/home/user181' somtimes reprsented as '~', and an invitation to type a command '$'. We are ready to get to work!  
+It contains the user name `user181`, server name `kontiki`, current working directory `/home/user181` somtimes reprsented as `~`, and an invitation to type a command `$`. We are ready to get to work!  
 &nbsp;  
   
 #### Exercise 1
