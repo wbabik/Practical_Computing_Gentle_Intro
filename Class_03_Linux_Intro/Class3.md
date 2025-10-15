@@ -124,9 +124,12 @@ The **absolute** path to your working directory will be printed to the standard 
   
 2. Type `mkdir hiv genome scripts` and press <kbd>Enter</kbd>.  
 The command `mkdir`, or an abbreviation from *make directory*, needs to be run with one or more parameters - the desired directory names. In this case, the command has resulted in the creation of three directories. You would reach the same when typing:
-`mkdir hiv` and press <kbd>Enter</kbd>
-`mkdir genome` and press <kbd>Enter</kbd>
-`mkdir scripts` and press <kbd>Enter</kbd>
+- `mkdir hiv` and press <kbd>Enter</kbd>
+
+- `mkdir genome` and press <kbd>Enter</kbd>
+
+- `mkdir scripts` and press <kbd>Enter</kbd>
+
 but it would mean that mkdir was reapeated three times while we could do it at once!
 
 4. Type `ls -l` and press <kbd>Enter</kbd>.  
