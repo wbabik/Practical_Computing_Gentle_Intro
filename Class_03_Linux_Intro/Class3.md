@@ -58,7 +58,7 @@ Please open PuTTY and:
 
   You are now connected to the server and can work on it in the terminal. In the same way, you can connect to the server from any Windows computer connected to the Internet. PuTTY is free software.
 
-If you have the Linux or MacOS operating system installed on your computer, you can open a terminal window like any other program. If you would like to connect to our server (to do your homework), use the ssh-client program. In the terminal enter:
+If you have the Linux or MacOS operating system installed on your computer, you can open a terminal window like any other program. If you would like to connect to our server, use the ssh-client program. In the terminal enter:
 
 `ssh 149.156.165.148 -l user102`  149.156.165.148 is the IP number our server and user102 is the user account name.
 
