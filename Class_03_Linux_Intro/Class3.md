@@ -54,7 +54,7 @@ Please open PuTTY and:
 
 - Then select `Translation` in the `Category` (left) and select `UTF-8` in the `Remote character set` field.
 
-- Press `Open`, then you will be asked by the program to enter your username (e. g., user102 - **your username and password will be provided by the course instructor**) and your password.  **Remember! Uppercase letters are not the same as lowercase in Linux !!!** Please enter your username and password carefully. **Note:** When typing the password, no characters appear in the terminal window (this is normal but might seem odd at the firs glance).
+- Press `Open`, then you will be asked by the program to enter your username (e. g., user102 - **your username and password will be provided by the course instructor**) and your password.  **Remember! Uppercase letters are not the same as lowercase in Linux !!!** Please enter your username and password carefully. **Note:** When typing the password, no characters appear in the terminal window (this is normal but might seem odd at the first glance).
 
   You are now connected to the server and can work on it in the terminal. In the same way, you can connect to the server from any Windows computer connected to the Internet. PuTTY is free software.
 
