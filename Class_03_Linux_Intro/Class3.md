@@ -41,7 +41,7 @@ So, in practical terms:
 &nbsp;   
   
 ## How to open a terminal?
-We assume that you work on a computer running Windows. If you are running Linux or MacOS, see below. Windows uses shell that is different from Linux shells, and we will not cover it during our course. Our first task will be to connect to a remote computer that runs Linux and start a terminal session which we will use for the rest of the class.  To do this, we will use the PuTTY program which you can download [here](https://www.putty.org/).
+We assume that you work on a computer running Windows as we do in our computer room. If you are running Linux or MacOS, see below. Windows uses shell that is different from Linux shells, and we will not cover it during our course. Our first task will be to connect to a remote computer that runs Linux and start a terminal session which we will use for the rest of the class.  To do this, we will use the PuTTY (preinstalled in the computer room) program which you can download [here](https://www.putty.org/).
 
 Please open PuTTY and:
 
