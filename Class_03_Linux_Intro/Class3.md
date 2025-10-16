@@ -248,9 +248,8 @@ Within the parent directory *scripts*, you have created another directory. Our f
 >  Move command is also used to rename a file (`file1` → `file2`) `mv [options] file1 file2`
 >
 > `cp [options] filename directory`
-> `cp -r directory1 directory2`
 > (copy). Copies the file named `filename` to a directory named `directory`.
-> The command with the `-r` option copies `directory1` and its content to directory named `directory2`.
+> The command `cp -r directory1 directory2` copies `directory1` and its content to directory named `directory2`.
 >
 > `rm [options] filename`</br>
 > `rm -r directory`
