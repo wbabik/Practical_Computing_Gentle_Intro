@@ -253,7 +253,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 >
 > `rm [options] filename`</br>
 > `rm -r directory`
-> (remove) Removes a directory with the given name.
+> (remove) Removes a directory or file with the given name.
 > `rm` with the `-r` option removes the directory and its content. **Warning!** Please be careful when deleting files and full directories. The `rm` command does not move them to the trash. Files and directories are permanently removed from the disk! 
 > 
 > `wc [options] filename`
