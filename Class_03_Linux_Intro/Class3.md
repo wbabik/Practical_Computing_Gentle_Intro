@@ -245,8 +245,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 > Creates an empty file named `filename`.
 >
 > `mv [options] filename directory`(move) moves the file named `filename` to the directory named `directory`.
-> `mv [options] file1 file2` 
->  move command is also used to rename a file (`file1` → `file2`)
+>  Move command is also used to rename a file (`file1` → `file2`) `mv [options] file1 file2`
 >
 > `cp [options] filename directory`
 > `cp -r directory1 directory2`
