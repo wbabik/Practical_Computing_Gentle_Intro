@@ -203,7 +203,7 @@ Basically each computer running Linux has several tools to work with text files.
 
 #### Exercise 2
 
-File ["Army_ant_COI_sequences.fasta"](https://www.dropbox.com/s/4ev6hq66yf3jgaj/Army_ant_COI_sequences.fasta?) contains barcode sequences of many specimens of several species of army ants, downloaded from Genbank. In each case, the sequence name contains genus, species, and isolate number.
+File ["Army_ant_COI_sequences.fasta"](https://www.dropbox.com/s/4ev6hq66yf3jgaj/Army_ant_COI_sequences.fasta?) contains barcode sequences of many specimens of several species of army ants, downloaded from Genbank. In each case, the sequence name contains genus, species, and isolate number. Use wget and the obove link to download the file to your home directory.
 ```
 >KX983244.1 Eciton burchellii isolate 6 cytochrome oxidase subunit I (COI) gene, partial cds; mitochondrial
 ATACTATACTTTATTTTTTCATTCTGAGCAGGAATATTAGGATCCTCAATAAGTATAATTATTCGCTTAGAACTAGGAACATGTGGGTCCCTTCTTAATAACGACGCT....
@@ -218,7 +218,7 @@ ATACTTTATTTTATCTTTTCTTTTTGAGCCGGAATATTAGGTTCATCAATAAGAATAATTATTCGACTAGAATTAGGAAC
 
 * 2.4. Display all sequences (headings + sequences) of *Labidus praedator*. Then, send them to a new file called **Labidus_praedator.fasta** (the file should be located in your home directory).
 
-* 2.5. Display, and then export to a new file, all sequences (headings + sequences) where the nucleotide sequence matches a potential diagnostic primer `ACCTGTGGTTCATTACTC`, supposed to match only a single species. Which species that is?
+* 2.5. Display, and then export to a new file, all sequences (headings + sequences) where the nucleotide sequence matches a potential diagnostic primer `ACCTGTGGTTCATTACTC`, supposed to match only a single species. Which species that is? Export the output to a new file called **Primers.fasta** (the file should be located in your home directory).
 
 * 2.6. We want to test another potential diagnostic primer for one of the species, `GGAAACTTYCTTGTACCA`. Note that it contains a degenerate position, `Y`, which according to the [IUPAC nucleotide code](https://www.bioinformatics.org/sms/iupac.html) represents either `T` or `C`. How many sequences does this primer match? Which species they belong to? How does the number of sequences matching the primer compare to the total number of sequences of that species?
 ---
