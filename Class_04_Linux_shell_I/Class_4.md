@@ -203,7 +203,7 @@ Basically each computer running Linux has several tools to work with text files.
 
 #### Exercise 2
 
-File ["Army_ant_COI_sequences.fasta"](https://www.dropbox.com/s/4ev6hq66yf3jgaj/Army_ant_COI_sequences.fasta?) contains barcode sequences of many specimens of several species of army ants, downloaded from Genbank. In each case, the sequence name contains genus, species, and isolate number. Use wget and the obove link to download the file to your home directory.
+File ["Army_ant_COI_sequences.fasta"](https://www.dropbox.com/s/4ev6hq66yf3jgaj/Army_ant_COI_sequences.fasta?) contains barcode sequences of many specimens of several species of army ants, downloaded from Genbank. In each case, the sequence name contains genus, species, and isolate number. Use `wget` and the obove link to download the file to your home directory.
 ```
 >KX983244.1 Eciton burchellii isolate 6 cytochrome oxidase subunit I (COI) gene, partial cds; mitochondrial
 ATACTATACTTTATTTTTTCATTCTGAGCAGGAATATTAGGATCCTCAATAAGTATAATTATTCGCTTAGAACTAGGAACATGTGGGTCCCTTCTTAATAACGACGCT....
