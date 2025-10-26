@@ -216,7 +216,7 @@ ATACTTTATTTTATCTTTTCTTTTTGAGCCGGAATATTAGGTTCATCAATAAGAATAATTATTCGACTAGAATTAGGAAC
 
 * How many sequences of *Eciton* species other than *burchellii* are there? **Hint**: you can pipe `|` the output of a `grep` search to another `grep` search!
 
-* 2.4. Display all sequences (headings + sequences) of *Labidus praedator*. Then, send them to a new file clled **Labidus_praedator.fasta**.
+* 2.4. Display all sequences (headings + sequences) of *Labidus praedator*. Then, send them to a new file called **Labidus_praedator.fasta** (the file should be located in your home directory).
 
 * 2.5. Display, and then export to a new file, all sequences (headings + sequences) where the nucleotide sequence matches a potential diagnostic primer `ACCTGTGGTTCATTACTC`, supposed to match only a single species. Which species that is?
 
