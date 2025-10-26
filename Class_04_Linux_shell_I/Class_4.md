@@ -255,7 +255,8 @@ As we saw in Class 2, text files are often structured into columns. Similarly, f
 >
 > the beginning of the file is:
 >
-> ```PSMB8a_c112196_g1_i1    51      229     5end_incomplete
+> ```
+> PSMB8a_c112196_g1_i1    51      229     5end_incomplete
 > PSMB8a_c112196_g1_i1    229     374     complete
 > PSMB8a_c112196_g1_i1    374     486     complete
 > PSMB8a_c112196_g1_i1    486     616     complete
@@ -282,7 +283,8 @@ As we saw in Class 2, text files are often structured into columns. Similarly, f
 >
 > produces the following output:
 >
-> ```AGPAT1_c248472_g1_i1_cds
+> ```
+> AGPAT1_c248472_g1_i1_cds
 > BRD2_c757_g1_i1_cds
 > DAXX_c114877_g1_i1_cds
 > KIFC1_c139688_g1_i1_cds
