@@ -299,7 +299,7 @@ As we saw in Class 2, text files are often structured into columns. Similarly, f
 > TAPBP_c134883_g1_i1
 > ```
 >
-> Now, use a similar technique to get the list of feature names and save it as **Population_acronyms.txt**.
+> Now, use a similar technique to get the list of feature names and save it as **Feature_names.txt**.
 
 #### Exercise 3
 
