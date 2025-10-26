@@ -230,8 +230,8 @@ As we saw in Class 2, text files are often structured into columns. Similarly, f
 > #### Syntax
 >
 > `cut [OPTIONS] [FILE]`  cuts fragments from a text file. 
-> `-c n1-n2` cuts from each line in the file characters from n1 to n2, counting from the beginning of the line
-> `-f columns`  cuts particular columns from the file; if multiple columns are specified, they should either be separated by `,` or, if you want a range of consecutive columns, by `-`.  For example:  `cut -f 2` extracts the second column, `cut -f 2,4,6` extracts columns two, four and six, and `cut -f 2-5` extracts columns from two to five.
+> `-c n1-n2` cuts from each line in the file characters from n1 to n2, counting from the beginning of the line,
+> `-f`  cuts particular columns from the file; if multiple columns are specified, they should either be separated by `,` or, if you want a range of consecutive columns, by `-`.  For example:  `cut -f 2` extracts the second column, `cut -f 2,4,6` extracts columns two, four and six, and `cut -f 2-5` extracts columns from two to five.
 > By default, `cut` assumes that columns are separated by `tab`, but any delimiter can be used, by setting it with option `-d 'sep'`. For example to use underscore (`_`) as separator and extract columns from two to five you type `cut -f 2-5 -d '_'`.
 >
 > `sort [OPTIONS] [FILE]` sorts lines of a text file alphabetically (by default)
