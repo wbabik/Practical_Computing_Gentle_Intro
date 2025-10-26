@@ -311,7 +311,7 @@ Download file `Ex_02_2.txt` from the Internet using `wget` and the link: `https:
 
 * Use `cat` to verify whether the file is `tab` delimited text.
 
-* Use `cut ` together with head (and `|`) to display the first 5 columns and 30 lines. You should get something like this:
+* Use `cut ` together with `head` (and `|`) to display the first 5 columns and 30 lines. You should get something like this:
   ```
    ID      info    a0001   a0002   a0003
   3038    Visui_R_vul_1   0       0       0
