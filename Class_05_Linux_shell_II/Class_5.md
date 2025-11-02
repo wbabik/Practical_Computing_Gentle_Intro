@@ -222,7 +222,7 @@ The script is now a bit shorter and we run it providing file name as command lin
 Write script `script4.sh` and save it in your home directory. Within the script define variable `n` and assign to it any integer from the range 1 to 20 (you decide which one you choose). Script should:
 
 1. Print number `n` in terminal.
-2. Print in terminal `n` first nucleotides from each of `n` lines at the end of the file `KT183271.fasta` which is in directory `hiv`. **Tip1**: use pipe. **Tip2** `-c` option of `cut` may be useful.
+2. Print in terminal `n` first nucleotides from each of `n` lines at the end of the file `GU201516.fasta` which is in directory `hiv`. **Tip1**: use pipe. **Tip2** `-c` option of `cut` may be useful.
 
 Set appropriate permissions and run the script in terminal.
 
