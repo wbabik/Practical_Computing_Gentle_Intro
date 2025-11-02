@@ -226,6 +226,8 @@ Write script `script4.sh` and save it in your home directory. Within the script 
 
 Set appropriate permissions and run the script in terminal.
 
+3. When you will be sure your script works properly modify it so it saves the output as `GU201516_modified.fasta`
+
 ----
 
 > #### Comments inside shell scripts
