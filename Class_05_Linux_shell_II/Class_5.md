@@ -215,7 +215,7 @@ head -2 $1 > L2_"$1"
 cd ..
 ```
 
-The script is now a bit shorter and we run it providing file name as command line argument: `./script3.sh KT183271.fasta`
+The script is now a bit shorter and we run it providing file name as command line argument: `./script3.sh KU168271.fasta`
 
 #### Exercise 5
 
