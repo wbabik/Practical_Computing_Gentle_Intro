@@ -70,7 +70,7 @@ Open the manual for `paste()` function
 #### Exercise 2
 
 Use `paste()` to stick together the following words
-`"I'm",`“using”`and`“R”\`. Don’t forget about quotation marks.
+`"I'm"`,`“using”`and `“R”`. Don’t forget about quotation marks.
 
 Expected result:
 
