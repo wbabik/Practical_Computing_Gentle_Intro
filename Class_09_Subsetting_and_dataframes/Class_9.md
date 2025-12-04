@@ -383,13 +383,13 @@ rule is the same as for mathematical operations on vectors.
 #### Exercise 14
 
 Manually create two vectors. The first with prime numbers and the second
-with even numbers from the range \<0, 10\>. Check whether they are
+with even numbers from the range \<2, 9\>. Check whether they are
 equal. Then, modify the first vector to be the same length as the second
 one but make sure the outcome of comparison doesn’t change.
 
 Expected result:
 
-    ## [1]  TRUE FALSE FALSE FALSE FALSE
+    ## [1]  TRUE FALSE FALSE FALSE
 
 ------------------------------------------------------------------------
 
