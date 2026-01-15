@@ -44,8 +44,8 @@ data frame.
     -   `ID_locality_species.txt`- tab-delimited file containing
         individual IDs (as in `genotypes.txt` but more), locality name,
         and species designation. There is also an additional column
-        `transctiptome` that we will not use. Note that locality names
-        contain characters outside the standard Latin character set.
+        `transctiptome` that we will not use today. Note that locality names
+        contain characters outside the standard Latin character set!
     -   `localities.txt`- tab-delimited file containing various
         information about localities. We’ll need only a subset of
         localities and a subset of columns.
@@ -108,7 +108,7 @@ head(gen[,1:10])
 We used several options to modify the default behaviour or
 `read.table()`:
 
--   column names to be taken from the 1st row,
+-   column names were taken from the 1st row,
 
 -   columns are separated by tabs
 
@@ -299,7 +299,7 @@ It’s much shorter now!
 
 -   **Add information about populations and species to the genotype
     table**  
-    We start be adding information about locality and species:
+    We start by adding information about locality and species:
 
 ``` r
 gen_long <- gen_long %>% left_join(ID_info, by = "ID")
@@ -333,10 +333,10 @@ a value of `ID` column in any row of `gen_long` data frame. If multiple
 rows from `ID_info` match a single row of `gene_long`, the resulting
 data frame will have more rows than `gen_long`.
 
-And now we’ll add information about localities:
+And now you should add information about localities:
 
 ``` r
-gen_long <- gen_long %>% left_join(localities, by = "locality")
+
 head(gen_long, n = 15)
 ```
 
@@ -404,7 +404,7 @@ pop_sum %>% distinct(locality) %>% nrow()
 
     ## [1] 121
 
-Then, we calculate the same statistics, but with data grouped by
+Next, we calculate the same statistics, but with data grouped just by
 species:
 
 ``` r
@@ -424,8 +424,7 @@ head(spec_sum)
     ## 4 ivanbureschi   111   316           18.3    41
     ## 5 macedonicus    112   261           20.3    41
 
-We’re done now! But, perhaps, you’d like to have a single table with all
-your summaries, so that the species summary is below the list of
+Finally we’d like to have a single table with all summaries, so that the species summary is below the list of
 populations of each species for the ease of inspection.
 
 -   **Combine the two result data frames into one**
@@ -483,7 +482,7 @@ sum_sum
     ## 10 Karakoç     anatolicus     3    42           22.3    NA
     ## # ... with 116 more rows
 
-And finally, we’d like to replace `NA` in the `Locality` column with the
+And we’d like to replace `NA` in the `Locality` column with the
 word “Overall”
 
     ## # A tibble: 126 x 6
@@ -509,52 +508,12 @@ the new column `locality` in this row will be `"Overall"`, otherwise,
 the value will just be taken from the existing `locality` column.
 
 -   **Save the resulting table into a text file**  
-    We want tab-delimited text file without enclosing any values in
+    We want tab-delimited text file "MHC_summary.txt" without enclosing any values in
     quotes
 
-The same can be done by using `dplyr` function `write_tsv()` called with
+It can be done by using `dplyr` function `write_tsv()` called with
 default options:
 
 ## Puting the code together
 
-Let’s see now how much code was actually needed to accomplish our task.
-Below is the code streamlined a little bit by a more extensive use of
-`%>%` and skipping commands that print intermediate results. Copy this
-code to your script and write comments (comment lines start with `#`)
-explaining what particular commands do.
-
-``` r
-library(tidyverse)
-
-gen <- read.table("data/genotypes.txt", header = TRUE, sep = "\t", encoding = "UTF-8")
-
-nrow(gen)
-gen %>% select(ID) %>% distinct() %>% nrow()
-
-gen_noNA <- gen %>% filter(!is.na(i_0003))
-
-ID_info <- read.table("data/ID_locality_species.txt", header = TRUE, sep = "\t", encoding = "UTF-8") %>% select(-transcriptome)
-
-localities <- read.table("data/localities.txt", header = TRUE, sep = "\t", encoding = "UTF-8") %>% 
-  select(locality, country, latitude, longitude)
-
-gen_long <- gen_noNA %>% pivot_longer(-ID, names_to = "allele", values_to = "present_absent") %>% 
-  filter(present_absent == 1) %>% select(-present_absent)
-
-gen_long <- gen_long %>% left_join(ID_info, by = "ID") %>% 
-  left_join(localities, by = "locality")
-
-pop_sum <- gen_long %>% group_by(locality, species) %>% summarise(n_ind = n_distinct(ID),
-                                                                  n_all = n_distinct(allele),
-                                                                  mean_n_all_ind = n()/n_ind)
-                                                
-spec_sum <- gen_long %>% group_by(species) %>% summarise(n_ind = n_distinct(ID),
-                                                         n_all = n_distinct(allele),
-                                                         mean_n_all_ind = n()/n_ind,
-                                                         n_pop = n_distinct(locality))
-
-sum_sum <- pop_sum %>% bind_rows(spec_sum) %>% arrange(species, locality) %>% 
-  mutate(locality = ifelse(is.na(locality), "Overall", locality))
-
-write_tsv(sum_sum, "MHC_summary.txt")
-```
+Send the code from todays classes togeter with the resulting file "MHC_summary.txt". Make sure you commented all the steps so it is clear what was done where!
