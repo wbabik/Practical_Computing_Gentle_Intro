@@ -509,11 +509,11 @@ the value will just be taken from the existing `locality` column.
 
 -   **Save the resulting table into a text file**  
     We want tab-delimited text file "MHC_summary.txt" without enclosing any values in
-    quotes
+    quotes!
 
 It can be done by using `dplyr` function `write_tsv()` called with
-default options:
+default options.
 
 ## Puting the code together
 
-Send the code from todays classes togeter with the resulting file "MHC_summary.txt". Make sure you commented all the steps so it is clear what was done where!
+Send the code from today classes to your instructor. Remember to send also the resulting file "MHC_summary.tsv". Make sure you commented all the steps along the pipeline so it is clear what was done where!
