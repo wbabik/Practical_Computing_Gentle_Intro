@@ -17,6 +17,13 @@
       * [Exercise 7](#exercise-7)
   * [Searching and replacing with sed](#searching-and-replacing-with-sed)
     * [Exercise 8](#exercise-8)
+  * [Processing text files with awk](#processing-text-files-with-awk)
+      * [awk introductory example](#awk-introductory-example)
+      * [Conditions](#conditions)
+      * [Exercise 9](#exercise-9)
+      * [Transformations and summaries of text files](#transformations-and-summaries-of-text-files)
+      * [Exercise 10](#exercise-10)
+      * [Exercise 11](#exercise-11)
 
 ***
 
