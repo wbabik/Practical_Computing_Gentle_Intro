@@ -329,5 +329,170 @@ Now, try to change all lowercase letters in the header (first line) of the resul
 **Tip** You can use `.*` as the searched regular expression (to be replaced) and `\U&` as the "new text". Save the resulting file as `Ex_02_2_upper.csv`.  
 This solution was found [here](https://stackoverflow.com/questions/22718518/sed-to-replace-lower-case-string-between-two-strings-to-upper-case).      
 
+## Processing text files with `awk`
+
+So far we have encountered a number of tools that, in particular when piped together, perform quite advanced processing of text files. Still, sometimes we want more power or more convenience.
+
+`awk` brings real programming into command line with no need of previous programming experience. Commonly, people don't even recognize that writing `awk` one-liners within `bash` scripts they do quite a bit of programming. The aim of this section is to scratch the surface to show you some capabilities of `awk` and if that catches your interest try to explore on your own. AI tools such as ChatGPT and Claude are really profficient in `awk` and often propose `awk` solutions for real life problems.
+
+`awk` takes a file, or text passed via pipe, tries to divide each line into **fields**, checks for a **pattern** specified by the user, and for lines fulfilling criteria takes some **action**. This may sound a bit cryptic so let's have a look at an example.
+
+### `awk` introductory example
+
+`echo "field1 field2 field3 field4" | awk '{print}'`
+
+This just prints text passed from `echo` in pipe
+
+`field1 field2 field3 field4`
+
+which is not particularly useful, but will help us to understand what happens. 
+
+`awk` syntax has the form `pattern {action}`. In the example above the pattern was missing, in which case the action is performed for each line of the input; here, the action is printing the input, which is a single line of text. In this example we've actually written a program `{print}`, specified within single quotes, and called `awk` to execute it, hence the `awk '{print}'` command, with the information what to print passed via pipe.
+
+`echo "field1 field2 field3 field4" | awk '{print $0}'`
+
+also produces 
+
+`field1 field2 field3 field4`
+
+because `$0` is where `awk` keeps the current line - previously we ommited the argment of `print`, which then assumes that it should print the whole line.
+
+`echo "field1 field2 field3 field4" | awk '{print $3, $2}'`
+
+produces
+
+`field3 field2`
+
+why? Because we asked `awk` to print fields 3 and 2 in that order. Two things here: 1) it's not easily done with tools we've learned so far, 2) we see that awk splits the line into fields based on **whitespaces** and keeps them in variables, in our case $1, $2, $3, $4; the total number of fields in the current line is kept in NF variable, so
+
+`echo "field1 field2 field3 field4" | awk '{print $4}'`
+
+and
+
+`echo "field1 field2 field3 field4" | awk '{print $NF}'`
+
+should produce the same output - check it yourself!
+
+### Conditions
+
+We can ask `awk` to perform an action only for some lines, as specified by condition, e.g.,
+
+`awk '/ble/ {print}'` will print only lines containing text 'ble'
+
+`awk '!/ble/ {print}'` will print only lines NOT containing text 'ble'
+
+`awk '$3 ~ /ble/ {print}'` will print only lines containing text 'ble' in the 3rd field
+
+`awk '$3 ~ !/ble/ {print}'` will print only lines NOT containing text 'ble' in the 3rd field
+
+`awk '$3 ~ /_[0-9]+$/ {print}'` will print only lines which 3rd field ends with underscore followed by an integer
+
+`awk 'NF > 0 {print}'` will skip all empty lines, i.e. lines which contain 0 fields
+
+`awk '$2 ~ /^[a-z]+$/ && $3 ~/^[0-9]+$/ {print}'` will print only lines which 2nd field is all small letters and which 3rd line is an integer. Note that `&&` is `AND` and `||` is `OR`.
+
+**Remember!** You have to give `awk` text to work on, either via pipe (`... | awk 'pattern {action}'`), or via text file (`awk 'pattern {action}' file`) - the examples above pasted into the command line will do nothing because `awk` doesn't know which text to work on.
+
+### Exercise 9
+
+Compare the output of:
+
+`echo "field1 field2 field3 field4" | awk '/field5/ {print}'`
+
+with the output of: 
+
+`echo "field1 field2 field3 field4" | awk '/field4/ {print}'`
+
+What happened? Why?
+
+### Transformations and summaries of text files
+
+Now we'll try to work with file Ex_02_2.txt, which we used previously. If you don't have it, you can get it, using `wget` from [here](Ex_02_2.txt).
+
+We'll use `awk` to peek into the file
+
+`awk 'NR <=10 {print $1, $2, $3, $4, $5}' Ex_02_2.txt`
+
+This is probably more informative than 
+
+`head Ex_02_2.txt`
+
+because the file has lots of columns. In the `awk` example above, we used variable `NR` which keeps the line number of the current line - we asked `awk` to print, for the first 10 lines, fields 1 to 5. Notice, that while the file seems to be tab-delimited (how to check this?), the output from `awk` command seems to be space-delimited. The reason is that `awk` by default uses both tabs and spaces (whitespaces) as field delimiters when reading a file, but it uses space as default delimiter when printing. This behaviour can be changed by assigning specific values to variables `FS` (Field Separator) and/or `OFS` (Output Field Separator). We can do it using `BEGIN` statement which performs some action, such as setting the value of a variable, before reading the input.
+
+`awk 'BEGIN{OFS="\t"} NR <=10 {print $1, $2, $3, $4, $5}' Ex_02_2.txt`
+
+Now, the ouput will be tab-delimited. If you want to be explicit about using tabs as field separator when reading file, you can use
+
+`awk 'BEGIN{FS=OFS="\t"} NR <=10 {print $1, $2, $3, $4, $5}' Ex_02_2.txt`
+
+which sets bot `FS` and `OFS` to tab. You can use various characters as field separator, you can also specify a regular expression which allows to have multiple characters as `FS` (though not `OFS`).
+
+It looks like our file has quite a regular structure, but it's hard to say for sure as there are so many columns. What about printing first five columns, the last one, and, additionally, the number of columns for each line? This is not something you could easily do with other tools we've learned so far, but with `awk` it's simple:
+
+`awk '{print $1, $2, $3, $4, $5, $NF, NF}' Ex_02_2.txt | less`
+
+We used the variable `NF` to print the last field (`$NF`), and we also printed its value which contains the number of fields (`NF`). We piped the output to `less` so we could inspect  it page by page. Looks like the structure is really regular and each line has eaxtly 644 columns. To be sure, we can ask `awk` to print lines which don't have 644 columns:
+
+`awk 'NF!=644 {print}' Ex_02_2.txt`
+
+This should print nothing as all lines in the file indeed have 644 columns.
+
+Let's print only lines which contain in the second field 'mon' and (`&&`) which ID (first field) is > 7300.
+
+`awk '$2 ~ /mon/ && $1 > 7300 {print}' Ex_02_2.txt`
+
+Note, that
+
+`awk '$2 ~ /mon/ && $1 > 7300' Ex_02_2.txt`
+
+does the same - if we specify condition, we can ommit the action which defaults then to print.
+
+Now, let's try to produce the report that calculates the number of variants each individual has. First line is the header, first column is individual ID, second is population ID, and the rest are presence (1) or absence (0) of a particular variant. So to calculate the total number of variants an individual has, we just have to sum fields from 3 to the last (`NF`)
+
+`awk 'NR > 1 {sum=0; for (i=3; i<=NF; i++) sum+=$i; print $1, $2, sum}' Ex_02_2.txt`
+
+This is a bit complicated, but it's also lots of useful programming in a single line. The above command can be also written in multiple lines:
+
+```
+awk 'NR > 1 {sum=0 
+ for (i=3; i<=NF; i++) 
+ sum+=$i
+ print $1, $2, sum}' Ex_02_2.txt
+ ```
+
+To skip the 1st line  we specify condition (`NR > 1`), then, we do the following things within the action brackets `{}`:
+
+- when starting to process line, set sum to 0 `sum=0`
+- then, iterate through fields from 3 to the last in the line (`NF`) adding (`+=`) the value of each subsequent field to the current value of `sum` variable
+- when you reach the last field stop and print ID (`$1`), population (`$2`) and `sum` which is the number of variants the individual has
+
+We can make our report more professional by adding a header and we can save it to a file
+
+`awk 'BEGIN{OFS="\t"; print "ID\tPOP\tN_VAR"} NR > 1 {sum=0; for (i=3; i<=NF; i++) sum+=$i; print $1, $2, sum}' Ex_02_2.txt > n_var_rep.txt`
+
+We can also ask `awk` to do something after it processed all lines in the output
+
+`awk 'END{print NR}' Ex_02_2.txt`
+
+will print the total number of lines in the file - after proceesing all lines, which is this case is just reading and not pronting, NR will be the number of the last line. The `END` statement instructs `awk` to print the current value of NR after processing all lines.
+
+### Exercise 10
+
+The example above replicates the action of another commend we've learned. Write this command.
+
+Now, let's try to use `END` for something more complicated. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant.
+
+`awk 'NR > 1 {a+=$5} END{print a}' Ex_02_2.txt` 
+
+Staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`.
+
+To remove the last underscore and number from the population id we'll use `sub` function within awk, which has syntax `sub(s, r, t)` where `s` is the string to be replaced, `r` is replacement, and `t` is the target of replacement.
+
+`awk 'NR == 1 {print}; NR > 1 {sub("_[0-9]+", "", $2); print}'  Ex_02_2.txt`
+
+### Exercise 11
+
+Modify the code above to have tab-separated output and write this output to file.
+
 
 [Return to the top](#working-in-linux-shell-ii)
