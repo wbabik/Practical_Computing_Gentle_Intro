@@ -122,7 +122,7 @@ Now we will find your current working directory.
 This command, an abbreviation from *print working directory*, does just that!  
 The **absolute** path to your working directory will be printed to the standard output, i.e., the terminal.  
 
-Next let's make three directories, and in one of them, a subdirectory.
+Next let's make three directories, and in one of them, a subdirectory.  
 2. Type `mkdir hiv genome scripts` and press <kbd>Enter</kbd>.  
 The command `mkdir`, or an abbreviation from *make directory*, needs to be run with one or more parameters - the desired directory names. In this case, the command has resulted in the creation of three directories. You would reach the same when typing:
 - `mkdir hiv` and press <kbd>Enter</kbd>
