@@ -135,15 +135,15 @@ The command `mkdir`, or an abbreviation from *make directory*, needs to be run w
 
  but it would mean that mkdir was reapeated three times while we could do it at once!
 
-4. Type `ls -l` and press <kbd>Enter</kbd>.  
+3. Type `ls -l` and press <kbd>Enter</kbd>.  
 You can see that your home directory now contains three new directories - *hiv*, *genome*, *scripts*. Cool!  
   
-3. Type `cd scripts` and press <kbd>Enter</kbd>.  
+4. Type `cd scripts` and press <kbd>Enter</kbd>.  
 The command `cd`, or an abbreviation from *change directory*, needs to be run with a parameter, that is an instruction on what you want to change to! We will talk more about this in a moment. After executing `cd`, you can inspect the path in the prompt line, display again the current working directory (`pwd`) and list the directory contents (`ls -l`).  
 
 Finally, let's make a a subdirectory in scripts.
  
-4. Type `mkdir output_files` and press <kbd>Enter</kbd>.  
+5. Type `mkdir output_files` and press <kbd>Enter</kbd>.  
 Within the parent directory *scripts*, you have created another directory. Our folder structure is getting complicated!  
 ---  
   
