@@ -60,7 +60,7 @@ Please open PuTTY and:
 
 If you have the Linux or MacOS operating system installed on your computer, you can open a terminal window like any other program. If you would like to connect to our server, use the ssh-client program. In the terminal enter:
 
-`ssh 149.156.165.150 -l user102`  149.156.165.150 is the IP number of our server and user102 is the user account name.
+`ssh 149.156.165.150 -l user100`  149.156.165.150 is the IP number of our server and user100 is the user account name.
 
 After pressing <kbd>Enter</kbd> you will be asked to enter your password.  
 &nbsp;  
@@ -69,13 +69,13 @@ After pressing <kbd>Enter</kbd> you will be asked to enter your password.
 ## Working in a Linux terminal 
 After starting your shell session, you should see a **prompt**. It will look more or less like this:
 ```
-user181@kontiki:/home/user181$
+user100@kontiki:/home/user181$
 ```   
 or
 ```
-user181@kontiki:~$
+user100@kontiki:~$
 ```   
-It contains the user name `user181`, server name `kontiki`, current working directory `/home/user181` somtimes reprsented as `~`, and an invitation to type a command `$`. We are ready to get to work!  
+It contains the user name `user100`, server name `kontiki`, current working directory `/home/user100` somtimes reprsented as `~`, and an invitation to type a command `$`. We are ready to get to work!  
 &nbsp;  
   
 #### Exercise 1
