@@ -238,7 +238,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 > (print working directory) - displays path to the current directory, starting with root
 >
 > `cd [directory]`
-> (change directory) - go to the directory. cd without target directory gets the user to its home directory, in the case of user102 this will be `/home/user102` 
+> (change directory) - go to the directory. `cd` without target directory gets the user to its home directory, in the case of user102 this will be `/home/user102` 
 >
 > `mkdir [options] directory`
 > (make directory) Create a new directory named `directory`. By using the `-p` option, we can create the given directory and parent directories (if they do not already exist) with one command.
