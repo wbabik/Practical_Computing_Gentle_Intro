@@ -234,7 +234,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 &nbsp;  
   
 > ### Useful commands and utilities Part 1
-> `pwd` </br> 
+> `pwd`
 > (print working directory) - displays path to the current directory, starting with root
 >
 > `cd [directory]`
