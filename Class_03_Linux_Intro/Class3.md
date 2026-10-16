@@ -45,7 +45,7 @@ We assume that you work on a computer running Windows as we do in our computer r
 
 Please open PuTTY and:
 
-- In the `Host Name (or IP address)` field, please enter:`149.156.165.148`
+- In the `Host Name (or IP address)` field, please enter:`149.156.165.150`
   This is the IP number of the `kontiki` server we'll use during the class.
 
 - In the `Port` field, leave `22`. We also do not change the connection type (`SSH`).
