@@ -178,7 +178,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 >
 > `scripts/output_files`
 >
-> Likewise, the absolute path to the result.txt file in the `output_files` directory is:
+> If there would be a file results.txt in the `output_files` directory, the absolute path to it would be:
 >
 > `/home/user102/scripts/output_files/result.txt`
 >
