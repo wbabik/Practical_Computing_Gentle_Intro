@@ -316,7 +316,7 @@ Please display content of directory `/dane`. How do files and directories look l
 
 #### Exercise 6
 Use wildcards to copy all fils starting with `GCF_` from the directory `/dane` to
-the `genome` directory you created. This is a file containing information about the human genome assembly.
+the `genome` directory you created. This files contain information about the human genome assembly.
 We will use it as an example of a text file later on   
 
 ---
