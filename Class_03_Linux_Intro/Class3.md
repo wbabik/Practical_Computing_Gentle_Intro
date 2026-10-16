@@ -285,13 +285,13 @@ Within the parent directory *scripts*, you have created another directory. Our f
   
   
 #### Exercise 4
-1. Within the `scripts` directory create three empty files, *file1.txt* *file2.txt* *file3.txt*.
-2. Move the newly created files to the `output_files` directory, and rename *file3.txt* to *results.txt*
-3. Copy *results.txt* to the directory `genome` and save it under the new name, *genome_results.txt*
-4. Copy the whole folder `output_files`, with all files, to the directory `genome`
+1. Within the `scripts` directory create four empty files, *file1.txt* *file2.txt* *file3.txt* *file4.txt*.
+2. Move two newly created files *file3.txt* *file4.txt* to the `output_files` directory, and rename *file3.txt* to *results.txt*
+3. Copy *results.txt* to the directory `genome` and save it there under the new name, *genome_results.txt*
+4. Next copy the whole folder `output_files`, with all files, to the directory `genome`
 5. From `output_files` in `scripts` directory, remove all files with *file* in their name.
-6. Change your working directory to home directory, and from there, remove the *genome_results.txt* file that you had placed in the `genome` directory.
-7. While within home directory, remove all files from the `genome/output_files/`, and then directory `output_files` itself.
+6. Change your working directory to home directory, and from there, remove the *file1.txt* file that you had created in the `scripts` directory.
+7. While within home directory, remove *file4.txt* from the `genome/output_files/`.
 ---  
 
   
