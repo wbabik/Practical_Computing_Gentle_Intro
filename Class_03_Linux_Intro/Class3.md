@@ -182,7 +182,7 @@ Within the parent directory *scripts*, you have created another directory. Our f
 >
 > `/home/user102/scripts/output_files/result.txt`
 >
-> The relative path is:
+> Assuming your current working directory is `/home/user102` its relative path would be:
 >
 > `scripts/output_files/result.txt`
 &nbsp;  
