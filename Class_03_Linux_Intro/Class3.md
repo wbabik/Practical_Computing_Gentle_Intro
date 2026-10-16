@@ -315,7 +315,7 @@ Please display content of directory `/dane`. How do files and directories look l
  
 
 #### Exercise 6
-Use autocompletion to copy the file `GCF_000001405.33 ...` from the directory `/dane` to
+Use wildcards to copy all fils starting with `GCF_` from the directory `/dane` to
 the `genome` directory you created. This is a file containing information about the human genome assembly.
 We will use it as an example of a text file later on   
 
