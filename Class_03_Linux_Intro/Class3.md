@@ -69,7 +69,7 @@ After pressing <kbd>Enter</kbd> you will be asked to enter your password.
 ## Working in a Linux terminal 
 After starting your shell session, you should see a **prompt**. It will look more or less like this:
 ```
-user100@kontiki:/home/user181$
+user100@kontiki:/home/user100$
 ```   
 or
 ```
