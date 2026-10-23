@@ -37,7 +37,7 @@ Linux provides an easy way to process at once a large number of files. For this 
 >
 > `rm *.jpg` will remove all files with the extension `.jpg` from the current directory
 >
-> `mv A* directory1` will move all files starting with `A` to `directory1`
+> `mv A* directory1` will move all files starting with `A` from the current directory to `directory1`
 >
 > `ls A???` will show all files/directories whose names are only 4 characters long and start with `A`
 
