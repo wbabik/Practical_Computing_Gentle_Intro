@@ -176,7 +176,7 @@ Basically each computer running Linux has several tools to work with text files.
 >
 > The basic syntax of`grep` is as follows:
 >
-> `grep [OPTIONS] 'pattern'[FILE]`
+> `grep [OPTIONS] 'pattern' [FILE]`
 >
 > Below several useful options:
 >
