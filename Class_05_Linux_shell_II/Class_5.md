@@ -243,7 +243,7 @@ Set appropriate permissions and run the script in terminal.
 
 #### Exercise 6
 
-Write script `script5.sh` and save it in your home directory. This script should do the same operations as `script4.sh` from Exercise 5, but `n` should be the first command line argument (`$1`), and the name of the file from which parts of the last lines will be printed should be the second command line argument (`$2`). Within the script include comments explaining the meaning of the two command line arguments. As previously, set permissions and run the script in terminal.
+Write script `script5.sh` and save it in your home directory. This script should do the same operations as `script4.sh` from Exercise 5, but `n` should be the first command line argument (`$1`), and the name of the file (different than in Exercise 5!) from which parts of the last lines will be printed should be the second command line argument (`$2`). Within the script include comments explaining the meaning of the two command line arguments. As previously, set permissions and run the script in terminal. Make sure the output file was saved!
 
 ---
 
