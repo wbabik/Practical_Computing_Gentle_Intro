@@ -47,7 +47,7 @@ After downloading and installing, open WinSCP, in the Login window in the field 
 
 ## MobaXterm combo (optional)
 
-So far we have been using `PuTTY` to connect to the remote server and above we introduced `scp` for transferring files between computers. An interesting alternative is `MobaXterm` which you can download [here](https://mobaxterm.mobatek.net/download.html). MobaXterm has all functionality of PuTTY, allows opening multiple connections to remote servers in separate tabs, has some `scp` functionality, so allows copying files between your local machine and remote server, and even provides Linux shell on your Windows computer.
+We are using `PuTTY` to connect to the remote server and above we introduced `WinSCP` for transferring files between computers. An interesting alternative is `MobaXterm` which you can download [here](https://mobaxterm.mobatek.net/download.html). MobaXterm has all functionality of PuTTY, allows opening multiple connections to remote servers in separate tabs, has some `WinSCP` functionality, so allows copying files between your local machine and remote server, and even provides Linux shell on your Windows computer.
 
 We encourage you to explore `MobaXterm` on your own,  and if you like it you can use it instead of PuTTY in the class, but we leave this decision to you.
 
