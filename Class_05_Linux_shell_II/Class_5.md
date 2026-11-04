@@ -311,7 +311,7 @@ But, it is usually used for two very simple tasks:
 >   sed 's/text1/text2/g' infile > outfile
 > 
 >   ## replacing all occurrences of "text1" in each line of the input file in place:
->   sed -i  's/text1/text2/g' infile
+>   sed -i 's/text1/text2/g' infile
 > ```
 > Extracting lines from the text file (second task):  
 > ```bash
