@@ -493,7 +493,7 @@ will print the total number of lines in the file - after proceesing all lines, w
 
 ### Exercise 11
 
-Now, let's use `awk` to calculate how many individuals have particular allele of our intrest. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant. Hint: staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`.
+Now, let's use `awk` to calculate how many individuals have particular allele of our intrest. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant. Hint: staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`. When you will be sure your command works save it in your directory as `script6.sh`.
 
 
 
