@@ -454,6 +454,8 @@ Note, that
 
 does the same - if we specify condition, we can ommit the action which defaults then to print.
 
+### Exercise 10
+
 Using `awk` print lines containg `vul` and `Solo` in the second column and save them in your home directory in a file named `Ex_02_2_vul_Solo.txt` 
 
 Now, let's try to produce the report that calculates the number of variants each individual has. First line is the header, first column is individual ID, second is population ID, and the rest are presence (1) or absence (0) of a particular variant. So to calculate the total number of variants an individual has, we just have to sum fields from 3 to the last (`NF`)
@@ -485,7 +487,7 @@ We can also ask `awk` to do something after it processed all lines in the output
 
 will print the total number of lines in the file - after proceesing all lines, which is this case is just reading and not pronting, NR will be the number of the last line. The `END` statement instructs `awk` to print the current value of NR after processing all lines.
 
-### Exercise 10
+### Exercise 11
 
 Now, let's use `awk` to calculate how many individuals have particular allele of our intrest. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant. Hint: staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`.
 
