@@ -487,19 +487,12 @@ will print the total number of lines in the file - after proceesing all lines, w
 
 ### Exercise 10
 
-Now, let's try to use `END` for something more complicated. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant.
+Now, let's use `awk` to calculate how many individuals have particular allele of our intrest. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant. Hint: staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`.
 
 `awk 'NR > 1 {a+=$5} END{print a}' Ex_02_2.txt` 
 
-Staring from line 2, add the value of the the 5th field to the current value of variable `a` (by default when `a` is called for the first time it's set to 0.). After processing the last line, print the current value of `a`.
 
-To remove the last underscore and number from the population id we'll use `sub` function within awk, which has syntax `sub(s, r, t)` where `s` is the string to be replaced, `r` is replacement, and `t` is the target of replacement.
 
-`awk 'NR == 1 {print}; NR > 1 {sub("_[0-9]+", "", $2); print}'  Ex_02_2.txt`
-
-### Exercise 11
-
-Modify the code above to have tab-separated output and write this output to file.
 
 
 [Return to the top](#working-in-linux-shell-ii)
