@@ -487,8 +487,6 @@ will print the total number of lines in the file - after proceesing all lines, w
 
 ### Exercise 10
 
-The example above replicates the action of another commend we've learned. Write this command.
-
 Now, let's try to use `END` for something more complicated. In the 5th column of `Ex_02_2.txt` there's variant `a0003`. Let's calculate how many individuals have this variant.
 
 `awk 'NR > 1 {a+=$5} END{print a}' Ex_02_2.txt` 
