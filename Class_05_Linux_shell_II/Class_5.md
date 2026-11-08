@@ -396,7 +396,7 @@ We can ask `awk` to perform an action only for some lines, as specified by condi
 
 `awk 'NF > 0 {print}'` will skip all empty lines, i.e. lines which contain 0 fields
 
-`awk '$2 ~ /^[a-z]+$/ && $3 ~/^[0-9]+$/ {print}'` will print only lines which 2nd field is all small letters and which 3rd line is an integer. Note that `&&` is `AND` and `||` is `OR`.
+`awk '$2 ~ /^[a-z]+$/ && $3 ~ /^[0-9]+$/ {print}'` will print only lines which 2nd field is all small letters and which 3rd field is an integer. Note that `&&` is `AND` and `||` is `OR`.
 
 **Remember!** You have to give `awk` text to work on, either via pipe (`... | awk 'pattern {action}'`), or via text file (`awk 'pattern {action}' file`) - the examples above pasted into the command line will do nothing because `awk` doesn't know which text to work on.
 
