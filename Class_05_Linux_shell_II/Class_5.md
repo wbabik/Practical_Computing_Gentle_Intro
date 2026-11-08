@@ -399,7 +399,7 @@ We can ask `awk` to perform an action only for some lines, as specified by condi
 
 **Remember!** You have to give `awk` text to work on, either via pipe (`... | awk 'pattern {action}'`), or via text file (`awk 'pattern {action}' file`) - the examples above pasted into the command line will do nothing because `awk` doesn't know which text to work on.
 
-### Exercise 9
+
 
 Compare the output of:
 
@@ -436,6 +436,11 @@ which sets bot `FS` and `OFS` to tab. You can use various characters as field se
 It looks like our file has quite a regular structure, but it's hard to say for sure as there are so many columns. What about printing first five columns, the last one, and, additionally, the number of columns for each line? This is not something you could easily do with other tools we've learned so far, but with `awk` it's simple:
 
 `awk '{print $1, $2, $3, $4, $5, $NF, NF}' Ex_02_2.txt | less`
+
+### Exercise 9
+
+Try to run the very same `awk` command without piping it to `less`. Is the output structure the same? If not then why could be the reason? When you identify the problem think how to solve it. Hint 1: Think about end of line (EOL) symbols. Hint 2: you can use `sed` to change EOL. Change the imput file (Ex_02_2.txt) so `awk '{print $1, $2, $3, $4, $5, $NF, NF}' Ex_02_2.txt` will behave properly.
+ 
 
 We used the variable `NF` to print the last field (`$NF`), and we also printed its value which contains the number of fields (`NF`). We piped the output to `less` so we could inspect  it page by page. Looks like the structure is really regular and each line has eaxtly 644 columns. To be sure, we can ask `awk` to print lines which don't have 644 columns:
 
