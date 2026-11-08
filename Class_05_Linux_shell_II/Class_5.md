@@ -329,7 +329,7 @@ But, it is usually used for two very simple tasks:
 
 
 ### Exercise 8  
-Download `Ex_02_2.txt` to your home directory from `https://www.dropbox.com/s/gruaw8vqgnwas8l/Ex_02_2.txt`. Transform it into a comma delimited file. Write the result to the new file named `Ex_02_2.csv`. 
+Download `Ex_02_2.txt` to your home directory from `https://www.dropbox.com/s/gruaw8vqgnwas8l/Ex_02_2.txt`. Use `sed` to transform it into a comma delimited file. Write the result to the new file named `Ex_02_2.csv`. 
 **Tip** Use sed and the symbolic representation of <kbd>Tab</kbd>: `\t`. 
 Now, try to change all lowercase letters in the header (first line) of the resulting file to the corresponding uppercase letters. 
 **Tip** You can use `.*` as the searched regular expression (to be replaced) and `\U&` as the "new text". Save the resulting file as `Ex_02_2_upper.csv`.  
