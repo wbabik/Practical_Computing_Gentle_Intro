@@ -454,7 +454,7 @@ Note, that
 
 does the same - if we specify condition, we can ommit the action which defaults then to print.
 
-Using awk print lines containg vul and Solo in the second column and save them in a file named Ex_02_2_vul_Solo.txt 
+Using `awk` print lines containg `vul` and `Solo` in the second column and save them in your home directory in a file named `Ex_02_2_vul_Solo.txt` 
 
 Now, let's try to produce the report that calculates the number of variants each individual has. First line is the header, first column is individual ID, second is population ID, and the rest are presence (1) or absence (0) of a particular variant. So to calculate the total number of variants an individual has, we just have to sum fields from 3 to the last (`NF`)
 
