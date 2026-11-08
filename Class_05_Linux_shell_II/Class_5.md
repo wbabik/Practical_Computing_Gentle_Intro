@@ -424,7 +424,7 @@ This gives similar output to
 
 `head Ex_02_2.txt | cut -f 1-5`
 
-because the file has lots of columns. In the `awk` example above, we used variable `NR` which keeps the line number of the current line - we asked `awk` to print, for the first 10 lines, fields 1 to 5. Notice, that while the file seems to be tab-delimited (how to check this?), the output from `awk` command seems to be space-delimited. The reason is that `awk` by default uses both tabs and spaces (whitespaces) as field delimiters when reading a file, but it uses space as default delimiter when printing. This behaviour can be changed by assigning specific values to variables `FS` (Field Separator) and/or `OFS` (Output Field Separator). We can do it using `BEGIN` statement which performs some action, such as setting the value of a variable, before reading the input.
+because the file has lots of columns. In the `awk` example above, we used variable `NR` which keeps the line number of the current line - we asked `awk` to print, for the first 10 lines, fields 1 to 5. Notice, that while the file is tab-delimited, the output from `awk` command seems to be space-delimited. The reason is that `awk` by default uses both tabs and spaces (whitespaces) as field delimiters when reading a file, but it uses space as default delimiter when printing. This behaviour can be changed by assigning specific values to variables `FS` (Field Separator) and/or `OFS` (Output Field Separator). We can do it using `BEGIN` statement which performs some action, such as setting the value of a variable, before reading the input.
 
 `awk 'BEGIN{OFS="\t"} NR <=10 {print $1, $2, $3, $4, $5}' Ex_02_2.txt`
 
