@@ -272,7 +272,7 @@ Write script `epidemy4.sh` which will, from all text files in the directory `epi
 
 ## Running jobs in the background with `screen`
 
-So far our scripts were fast and we did not have to wait more than a few seconds for the to finish. In may real-life applications you have to process large files or perform time-consuming calculations. In such situations it's useful to be able to disconnect from a remote computer while leaving your script/program running in the background. For this you can use `screen`.
+So far our scripts were fast and we did not have to wait more than a few seconds for them to finish. In many real-life applications you have to process large files or perform time-consuming calculations. In such situations it's useful to be able to disconnect from a remote computer while leaving your script/program running in the background. For this you can use `screen`.
 
 > #### Using `screen`
 >
