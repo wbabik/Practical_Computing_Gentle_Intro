@@ -124,7 +124,7 @@ Line 2: town where the case was diagnosed
 
 Line 3: date when the case was diagnosed
 
-Line 4: comment - this line can be missing, or can be present and can contain information about complications
+Line 4: comment - this line can be missing, can be present but empty, or can be present and contain information about complications
 
 Write script `epidemy1.sh`. This script should take as command line arguments ids (numbers) of two patients. If both were diagnosed the same day, then the script should print in terminal : `Diagnosed on the same day`. If the dates were different the script should print: `Diagnosed on different days`. Please test the script on patients 10015 and 1196 (the same date) and 10113 and 1595 (different dates).
 
